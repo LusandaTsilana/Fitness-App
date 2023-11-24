@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/users", userRoute);
 
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
   res.send("Welcome our GetUp App APIs");
 });
 
