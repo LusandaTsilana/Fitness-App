@@ -6,7 +6,7 @@ import {
   TextInput,
   Text,
 } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 
 //components
 import TextComponent from "../components/TextComponent";
@@ -14,8 +14,11 @@ import InputHeading from "../components/InputHeading";
 import BackButton from "../components/BackButton";
 import Head from "../components/Head";
 import Button from "../components/Buttons";
+import { AuthContext } from "../context/AuthContext";
 
 const Signup = () => {
+  const { registerInfo, updateRegisterInfo } = useContext(AuthContext);
+
   return (
     <KeyboardAvoidingView
       behavior="padding"
@@ -35,6 +38,12 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your first name"
+                onChange={(e) =>
+                  updateRegisterInfo({
+                    ...registerInfo,
+                    firstname: e.target.value,
+                  })
+                }
               />
             </View>
 
@@ -43,6 +52,12 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your last name"
+                onChange={(e) =>
+                  updateRegisterInfo({
+                    ...registerInfo,
+                    lastname: e.target.value,
+                  })
+                }
               />
             </View>
 
@@ -51,6 +66,12 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your email address"
+                onChange={(e) =>
+                  updateRegisterInfo({
+                    ...registerInfo,
+                    email: e.target.value,
+                  })
+                }
               />
             </View>
 
@@ -59,6 +80,12 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
+                onChange={(e) =>
+                  updateRegisterInfo({
+                    ...registerInfo,
+                    password: e.target.value,
+                  })
+                }
               />
             </View>
 
