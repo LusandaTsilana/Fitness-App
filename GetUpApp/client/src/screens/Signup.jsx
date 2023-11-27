@@ -17,7 +17,8 @@ import Button from "../components/Buttons";
 import { AuthContext } from "../context/AuthContext";
 
 const Signup = () => {
-  const { registerInfo, updateRegisterInfo } = useContext(AuthContext);
+  const { registerInfo, updateRegisterInfo, registerUser, registerError } =
+    useContext(AuthContext);
 
   return (
     <KeyboardAvoidingView

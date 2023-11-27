@@ -19,6 +19,8 @@ export const postRequest = async (url, body) => {
     } else {
       message = data;
     }
+
+    return { error: true, message };
   }
 
   return data;
