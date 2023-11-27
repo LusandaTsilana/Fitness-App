@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+
+import RunGirl from "../../assets/run-girl.gif";
 
 //components
 import Head from "../components/Head";
 import Button from "../components/Buttons";
 
-const navigation = useNavigation();
-
 const Landing = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Head />
