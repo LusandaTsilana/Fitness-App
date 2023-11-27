@@ -45,7 +45,7 @@ const registerUser = async (req, res) => {
 
     res.status(200).json({ _id: user._id, firstname, lastname, email, token });
   } catch (error) {
-    console.log(error);
+    console.log("Server failed to post data", error);
     res.status(500).json(error);
   }
 };
@@ -68,11 +68,36 @@ const loginUser = async (req, res) => {
     res.status(200).json({
       _id: user._id,
       firstname: user.firstname,
-      lastname,
-      email,
+      lastname: user.lastname,
+      email: user.email,
       token,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log("Server failed to request", error);
+    res.status(500).json(error);
+  }
 };
 
-module.exports = { registerUser, loginUser };
+//to get a user / all users
+const findUser = async (req, res) => {
+  const userId = req.params.userId;
+  try {
+    const user = await userModel.findById(userId);
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
+
+const getUsers = async (req, res) => {
+  try {
+    const users = await userModel.find();
+    res.status(200).json(users);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
+
+module.exports = { registerUser, loginUser, findUser, getUsers };
