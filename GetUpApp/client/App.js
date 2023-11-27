@@ -3,19 +3,23 @@ import { NavigationContainer } from "@react-navigation/native";
 import AuthNavigator from "../client/src/navigation/AuthNavigator";
 // import AppNavigator from "./client/src/navigation/AppNavigator";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
+
+import { AuthContextProvider } from "./src/context/AuthContext";
 
 export default function App() {
   // const [authenticated, setAuthenticated] = useState(false);
 
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
+      <AuthContextProvider>
+        <SafeAreaView style={styles.container}>
+          <StatusBar style="auto" />
 
-        {/* {authenticated ? <AppNavigator /> : */}
-        <AuthNavigator />
-      </View>
+          {/* {authenticated ? <AppNavigator /> : */}
+          <AuthNavigator />
+        </SafeAreaView>
+      </AuthContextProvider>
     </NavigationContainer>
   );
 }
