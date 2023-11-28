@@ -17,8 +17,13 @@ import Button from "../components/Buttons";
 import { AuthContext } from "../context/AuthContext";
 
 const Signup = () => {
-  const { registerInfo, updateRegisterInfo, registerUser, registerError } =
-    useContext(AuthContext);
+  const {
+    registerInfo,
+    updateRegisterInfo,
+    registerUser,
+    registerError,
+    isRegisterLoading,
+  } = useContext(AuthContext);
 
   return (
     <KeyboardAvoidingView
@@ -89,6 +94,13 @@ const Signup = () => {
                 }
               />
             </View>
+            {isRegisterLoading
+              ? "Creating your account. Loading..."
+              : "Register"}
+
+            {registerError?.error && (
+              <Text style={styles.emessage}>{registerError?.message}</Text>
+            )}
 
             <Button text="Sign Up" onPress={registerUser} />
           </View>
@@ -122,6 +134,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 }, // iOS shadow offset (x, y)
     shadowOpacity: 1, // iOS shadow opacity
     shadowRadius: 4, // iOS shadow radius
+  },
+
+  emessage: {
+    fontSize: 16,
+    color: "red",
   },
 });
 
