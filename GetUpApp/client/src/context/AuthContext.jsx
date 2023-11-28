@@ -39,6 +39,7 @@ export const AuthContextProvider = ({ children }) => {
       return setRegisterError(response);
     }
 
+    //storing user data in local storage so user doesnt have to login again when page refreshes
     localStorage.setItem("User", JSON.stringify(response));
     setUser(response);
   }, []);

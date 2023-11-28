@@ -90,7 +90,7 @@ const Signup = () => {
               />
             </View>
 
-            <Button text="Sign Up" />
+            <Button text="Sign Up" onPress={registerUser} />
           </View>
         </View>
       </ScrollView>
