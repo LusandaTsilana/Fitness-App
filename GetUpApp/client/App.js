@@ -8,17 +8,16 @@ import { StyleSheet, SafeAreaView } from "react-native";
 import { AuthContext, AuthContextProvider } from "./src/context/AuthContext";
 
 export default function App() {
-  const [user] = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
 
   return (
     <NavigationContainer>
-      <AuthContextProvider>
-        <SafeAreaView style={styles.container}>
-          <StatusBar style="auto" />
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="auto" />
 
-          {user ? <AppNavigator /> : <AuthNavigator />}
-        </SafeAreaView>
-      </AuthContextProvider>
+        {/* {user ? <AppNavigator /> : <AuthNavigator />} */}
+        <AuthNavigator />
+      </SafeAreaView>
     </NavigationContainer>
   );
 }
