@@ -51,6 +51,9 @@ const Signup = () => {
                   })
                 }
               />
+              {registerError?.error && (
+                <Text style={styles.emessage}>{registerError?.message}</Text>
+              )}
             </View>
 
             <View>
@@ -65,6 +68,9 @@ const Signup = () => {
                   })
                 }
               />
+              {registerError?.error && (
+                <Text style={styles.emessage}>{registerError?.message}</Text>
+              )}
             </View>
 
             <View>
@@ -79,6 +85,9 @@ const Signup = () => {
                   })
                 }
               />
+              {registerError?.error && (
+                <Text style={styles.emessage}>{registerError?.message}</Text>
+              )}
             </View>
 
             <View>
@@ -93,16 +102,20 @@ const Signup = () => {
                   })
                 }
               />
+              {registerError?.error && (
+                <Text style={styles.emessage}>{registerError?.message}</Text>
+              )}
             </View>
-            {isRegisterLoading
-              ? "Creating your account. Loading..."
-              : "Register"}
 
-            {registerError?.error && (
+            {/* {registerError?.error && (
               <Text style={styles.emessage}>{registerError?.message}</Text>
-            )}
+            )} */}
 
-            <Button text="Sign Up" onPress={registerUser} />
+            <Button
+              text="Sign Up"
+              onPress={registerUser}
+              loading={isRegisterLoading}
+            />
           </View>
         </View>
       </ScrollView>
@@ -126,7 +139,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "white",
     paddingHorizontal: 10,
-    marginBottom: 30,
+    marginBottom: 25,
     width: 307,
     height: 42,
     borderRadius: 8,
@@ -137,8 +150,9 @@ const styles = StyleSheet.create({
   },
 
   emessage: {
-    fontSize: 16,
+    fontSize: 14,
     color: "red",
+    marginBottom: 10,
   },
 });
 

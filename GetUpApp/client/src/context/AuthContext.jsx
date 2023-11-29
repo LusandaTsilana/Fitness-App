@@ -24,7 +24,8 @@ export const AuthContextProvider = ({ children }) => {
     setRegisterInfo(info);
   }, []);
 
-  const registerUser = useCallback(async () => {
+  const registerUser = useCallback(async (e) => {
+    e.preventDefault();
     setIsRegisterLoading(true);
     setRegisterError(null);
 
@@ -52,6 +53,7 @@ export const AuthContextProvider = ({ children }) => {
         updateRegisterInfo,
         registerUser,
         registerError,
+        isRegisterLoading,
       }}
     >
       {children}

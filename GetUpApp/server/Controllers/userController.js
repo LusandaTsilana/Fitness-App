@@ -18,8 +18,10 @@ const registerUser = async (req, res) => {
     if (user)
       return res.status(400).json("User with given email already exists");
     //validations below
-    if (!firstname || !lastname || !email || !password)
-      return res.status(400).json("All form fields are required");
+    if (!firstname) return res.status(400).json("First name is required");
+    if (!lastname) return res.status(400).json("Last name is required");
+    if (!email) return res.status(400).json("Email is required");
+    if (!password) return res.status(400).json("Password is required");
 
     if (!validator.isEmail(email))
       return res.status(400).json("Wrong email format. Must be a valid email");

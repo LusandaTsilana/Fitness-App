@@ -1,10 +1,12 @@
 import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
 
-const Buttons = ({ text, onPress }) => {
+const Buttons = ({ text, onPress, loading }) => {
   return (
     <Pressable style={styles.button} onPress={onPress}>
-      <Text style={styles.buttonText}>{text}</Text>
+      <Text style={styles.buttonText}>
+        {loading ? "Creating your account. Loading..." : text}
+      </Text>
     </Pressable>
   );
 };
