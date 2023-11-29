@@ -51,9 +51,6 @@ const Signup = () => {
                   })
                 }
               />
-              {registerError?.error && (
-                <Text style={styles.emessage}>{registerError?.message}</Text>
-              )}
             </View>
 
             <View>
@@ -68,9 +65,6 @@ const Signup = () => {
                   })
                 }
               />
-              {registerError?.error && (
-                <Text style={styles.emessage}>{registerError?.message}</Text>
-              )}
             </View>
 
             <View>
@@ -85,9 +79,6 @@ const Signup = () => {
                   })
                 }
               />
-              {registerError?.error && (
-                <Text style={styles.emessage}>{registerError?.message}</Text>
-              )}
             </View>
 
             <View>
@@ -102,14 +93,11 @@ const Signup = () => {
                   })
                 }
               />
-              {registerError?.error && (
-                <Text style={styles.emessage}>{registerError?.message}</Text>
-              )}
             </View>
 
-            {/* {registerError?.error && (
+            {registerError?.error && (
               <Text style={styles.emessage}>{registerError?.message}</Text>
-            )} */}
+            )}
 
             <Button
               text="Sign Up"
