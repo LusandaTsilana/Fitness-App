@@ -12,12 +12,14 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <SafeAreaView style={styles.container}>
-        <StatusBar style="auto" />
+      <AuthContextProvider>
+        <SafeAreaView style={styles.container}>
+          <StatusBar style="auto" />
 
-        {/* {user ? <AppNavigator /> : <AuthNavigator />} */}
-        <AuthNavigator />
-      </SafeAreaView>
+          {/* {user ? <AppNavigator /> : <AuthNavigator />} */}
+          <AuthNavigator />
+        </SafeAreaView>
+      </AuthContextProvider>
     </NavigationContainer>
   );
 }
