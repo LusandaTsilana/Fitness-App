@@ -24,26 +24,29 @@ export const AuthContextProvider = ({ children }) => {
     setRegisterInfo(info);
   }, []);
 
-  const registerUser = useCallback(async (e) => {
-    e.preventDefault();
-    setIsRegisterLoading(true);
-    setRegisterError(null);
+  const registerUser = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setIsRegisterLoading(true);
+      setRegisterError(null);
 
-    const response = await postRequest(
-      `${baseUrl}/users/register`,
-      JSON.stringify(registerInfo)
-    );
+      const response = await postRequest(
+        `${baseUrl}/users/register`,
+        JSON.stringify(registerInfo)
+      );
 
-    setIsRegisterLoading(false);
+      setIsRegisterLoading(false);
 
-    if (response.error) {
-      return setRegisterError(response);
-    }
+      if (response.error) {
+        return setRegisterError(response);
+      }
 
-    //storing user data in local storage so user doesnt have to login again when page refreshes
-    localStorage.setItem("User", JSON.stringify(response));
-    setUser(response);
-  }, []);
+      //storing user data in local storage so user doesnt have to login again when page refreshes
+      localStorage.setItem("User", JSON.stringify(response));
+      setUser(response);
+    },
+    [registerInfo]
+  );
 
   return (
     <AuthContext.Provider
