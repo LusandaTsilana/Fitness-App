@@ -3,6 +3,8 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { baseUrl, postRequest } from "../utils/services";
 
+import { AsyncStorage } from "react-native";
+
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
@@ -51,6 +53,7 @@ export const AuthContextProvider = ({ children }) => {
       localStorage.setItem("User", JSON.stringify(response));
       setUser(response);
     },
+
     [registerInfo]
   );
 
