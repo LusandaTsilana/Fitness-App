@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthNavigator from "../client/src/navigation/AuthNavigator";
 // import AppNavigator from "./client/src/navigation/AppNavigator";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView } from "react-native";
 
-import { AuthContextProvider } from "./src/context/AuthContext";
+import { AuthContext, AuthContextProvider } from "./src/context/AuthContext";
 
 export default function App() {
-  // const [authenticated, setAuthenticated] = useState(false);
+  const [user] = useContext(AuthContext);
 
   return (
     <NavigationContainer>
