@@ -16,8 +16,7 @@ export default function App() {
         <SafeAreaView style={styles.container}>
           <StatusBar style="auto" />
 
-          {/* {authenticated ? <AppNavigator /> : */}
-          <AuthNavigator />
+          {user ? <AppNavigator /> : <AuthNavigator />}
         </SafeAreaView>
       </AuthContextProvider>
     </NavigationContainer>
