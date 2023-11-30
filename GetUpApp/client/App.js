@@ -8,7 +8,7 @@ import { StyleSheet, View } from "react-native";
 import { AuthContext, AuthContextProvider } from "./src/context/AuthContext";
 
 export default function App() {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <NavigationContainer>
@@ -16,7 +16,7 @@ export default function App() {
         <View style={styles.container}>
           <StatusBar style="auto" />
 
-          {/* {user ? <AppNavigator /> : <AuthNavigator />} */}
+          {user ? <AppNavigator /> : <AuthNavigator />}
           <AuthNavigator />
         </View>
       </AuthContextProvider>
