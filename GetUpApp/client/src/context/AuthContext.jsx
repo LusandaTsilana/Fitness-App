@@ -3,7 +3,7 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { baseUrl, postRequest } from "../utils/services";
 
-import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const AuthContext = createContext();
 
@@ -23,9 +23,19 @@ export const AuthContextProvider = ({ children }) => {
   console.log("Userr", user);
 
   useEffect(() => {
-    const user = localStorage.getItem("User");
+    const getUser = async () => {
+      try {
+        // Await the result of AsyncStorage.getItem
+        const userString = await AsyncStorage.getItem("User");
+        // Parse the retrieved data
+        const user = JSON.parse(userString);
+        setUser(user);
+      } catch (error) {
+        console.error("Error reading user data:", error);
+      }
+    };
 
-    setUser(JSON.parse(user));
+    getUser();
   }, []);
 
   const updateRegisterInfo = useCallback((info) => {
@@ -50,7 +60,8 @@ export const AuthContextProvider = ({ children }) => {
       }
 
       //storing user data in local storage so user doesnt have to login again when page refreshes
-      localStorage.setItem("User", JSON.stringify(response));
+      // localStorage.setItem("User", JSON.stringify(response));
+      AsyncStorage.setItem("User", JSON.stringify(response));
       setUser(response);
     },
 

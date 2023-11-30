@@ -44,10 +44,10 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your first name"
-                onChange={(e) =>
+                onChangeText={(text) =>
                   updateRegisterInfo({
                     ...registerInfo,
-                    firstname: e.target.value,
+                    firstname: text,
                   })
                 }
               />
@@ -58,10 +58,10 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your last name"
-                onChange={(e) =>
+                onChangeText={(text) =>
                   updateRegisterInfo({
                     ...registerInfo,
-                    lastname: e.target.value,
+                    lastname: text,
                   })
                 }
               />
@@ -72,10 +72,10 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your email address"
-                onChange={(e) =>
+                onChangeText={(text) =>
                   updateRegisterInfo({
                     ...registerInfo,
-                    email: e.target.value,
+                    email: text,
                   })
                 }
               />
@@ -86,10 +86,10 @@ const Signup = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
-                onChange={(e) =>
+                onChangeText={(text) =>
                   updateRegisterInfo({
                     ...registerInfo,
-                    password: e.target.value,
+                    password: text,
                   })
                 }
               />
