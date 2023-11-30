@@ -21,8 +21,6 @@ export const AuthContextProvider = ({ children }) => {
   });
 
   console.log("User", user);
-  console.log("Regitser Info", registerInfo);
-  console.log("Register Error", registerError);
 
   useEffect(() => {
     const getUser = async () => {
