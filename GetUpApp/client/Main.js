@@ -5,11 +5,7 @@ import App from "./App";
 import { AuthContextProvider } from "./src/context/AuthContext";
 
 function Main() {
-  return (
-    <AuthContextProvider>
-      <App />
-    </AuthContextProvider>
-  );
+  return <App />;
 }
 
 //Component is registered here with AppRegistry
