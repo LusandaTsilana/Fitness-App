@@ -1,13 +1,17 @@
-//this is to ensure we can grap user info and use it throughout the app to update variables
-
+//this file is to ensure we can grap user info and use it throughout the app to update variables
 import { createContext, useCallback, useEffect, useState } from "react";
+
+//connection of server to context of the app
 import { baseUrl, postRequest } from "../utils/services";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+  const navigation = useNavigation();
+
   const [user, setUser] = useState(null);
 
   const [registerError, setRegisterError] = useState(null);
@@ -66,7 +70,8 @@ export const AuthContextProvider = ({ children }) => {
       setUser(response);
     },
 
-    [registerInfo]
+    [registerInfo],
+    navigation.navigate()
   );
 
   //user logout, to clear storage & states
