@@ -19,6 +19,7 @@ const AppHeader = ({ style, content, showName }) => {
         </View>
         <View style={styles.right}>
           <Button
+            onPress={logoutUser}
             text="Logout"
             style={{ width: 100 }}
             styleS={{ fontSize: 15, marginVertical: 10 }}
