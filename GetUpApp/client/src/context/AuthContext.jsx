@@ -5,13 +5,10 @@ import { createContext, useCallback, useEffect, useState } from "react";
 import { baseUrl, postRequest } from "../utils/services";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation } from "@react-navigation/native";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const navigation = useNavigation();
-
   const [user, setUser] = useState(null);
 
   const [registerError, setRegisterError] = useState(null);
@@ -70,8 +67,7 @@ export const AuthContextProvider = ({ children }) => {
       setUser(response);
     },
 
-    [registerInfo],
-    navigation.navigate()
+    [registerInfo]
   );
 
   //user logout, to clear storage & states
