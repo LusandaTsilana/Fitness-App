@@ -1,16 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
 
-//context
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+//components
+import AppHeader from "../components/AppHeader";
 
 const Today = () => {
-  const { user } = useContext(AuthContext);
   return (
     <View>
-      <Text>Today</Text>
-      <Text>{user.firstname}</Text>
+      <AppHeader content="Today" showName={true} />
     </View>
   );
 };
