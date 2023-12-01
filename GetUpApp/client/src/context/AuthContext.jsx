@@ -42,6 +42,7 @@ export const AuthContextProvider = ({ children }) => {
     setRegisterInfo(info);
   }, []);
 
+  //user registration
   const registerUser = useCallback(
     async (e) => {
       e.preventDefault();
@@ -68,6 +69,12 @@ export const AuthContextProvider = ({ children }) => {
     [registerInfo]
   );
 
+  //user logout, to clear storage & states
+  const logoutUser = useCallback(() => {
+    AsyncStorage.removeItem("User");
+    setUser(null);
+  }, []);
+
   return (
     <AuthContext.Provider
       value={{
@@ -77,6 +84,7 @@ export const AuthContextProvider = ({ children }) => {
         registerUser,
         registerError,
         isRegisterLoading,
+        logoutUser,
       }}
     >
       {children}
