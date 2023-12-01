@@ -16,14 +16,13 @@ export default function App() {
 }
 
 function InnerApp() {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <NavigationContainer>
       <View style={styles.container}>
         <StatusBar style="auto" />
-        {/* {user ? <AppNavigator /> : <AuthNavigator />} */}
-        <AuthNavigator />
+        {user ? <AppNavigator /> : <AuthNavigator />}
       </View>
     </NavigationContainer>
   );
