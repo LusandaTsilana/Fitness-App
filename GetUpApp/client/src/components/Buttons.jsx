@@ -1,10 +1,12 @@
 import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
 
-const Buttons = ({ text, onPress, loading }) => {
+const Buttons = ({ text, onPress, loading, style, styleS }) => {
   return (
-    <Pressable style={styles.button} onPress={onPress}>
-      <Text style={styles.buttonText}>{loading ? "Loading..." : text}</Text>
+    <Pressable style={[styles.button, style]} onPress={onPress}>
+      <Text style={[styles.buttonText, styleS]}>
+        {loading ? "Loading..." : text}
+      </Text>
     </Pressable>
   );
 };
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 20,
-    marginTop: 5,
+    margin: 5,
     textAlign: "center",
     letterSpacing: 2.4,
   },

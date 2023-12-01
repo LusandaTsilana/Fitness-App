@@ -7,7 +7,7 @@ import AppHeader from "../components/AppHeader";
 const Today = () => {
   return (
     <View>
-      <AppHeader content="Today" showName={true} />
+      <AppHeader content="Good day," showName={true} />
     </View>
   );
 };
