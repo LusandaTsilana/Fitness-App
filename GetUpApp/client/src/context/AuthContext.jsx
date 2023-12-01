@@ -21,6 +21,11 @@ export const AuthContextProvider = ({ children }) => {
     password: "",
   });
 
+  const [loginInfo, setLoginInfo] = useState({
+    email: "",
+    password: "",
+  });
+
   console.log("User", user);
 
   useEffect(() => {
@@ -69,6 +74,8 @@ export const AuthContextProvider = ({ children }) => {
 
     [registerInfo]
   );
+
+  const loginUser = useCallback(() => {}, [loginInfo]);
 
   //user logout, to clear storage & states
   const logoutUser = useCallback(() => {
