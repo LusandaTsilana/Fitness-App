@@ -60,18 +60,21 @@ const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    let user = await userModel.findOne({ email });
+
+    if (!user) return res.status(400).json("Invalid email or password");
+
+    const isValidPassword = await bcrypt.compare(password, user.password);
+
+    if (!isValidPassword)
+      return res.status(400).json("Invalid email or password");
+
     //validations below
     if (!email || !password)
       return res.status(400).json("All form fields are required");
 
     if (!validator.isEmail(email))
       return res.status(400).json("Wrong email format. Must be a valid email");
-
-    let user = await userModel.findOne({ email });
-
-    if (!user) return res.status(400).json("Invalid email or password");
-
-    const isValidPassword = await bcrypt.compare(password, user.password);
 
     if (!isValidPassword)
       return res.status(400).json("Invalid email or password");
@@ -112,5 +115,11 @@ const getUsers = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+// Global handler for unhandled promise rejections
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("Unhandled Rejection at:", promise, "reason:", reason);
+  // Handle the error here or log it as needed
+});
 
 module.exports = { registerUser, loginUser, findUser, getUsers };
