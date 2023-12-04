@@ -116,10 +116,4 @@ const getUsers = async (req, res) => {
   }
 };
 
-// Global handler for unhandled promise rejections
-process.on("unhandledRejection", (reason, promise) => {
-  console.error("Unhandled Rejection at:", promise, "reason:", reason);
-  // Handle the error here or log it as needed
-});
-
 module.exports = { registerUser, loginUser, findUser, getUsers };
