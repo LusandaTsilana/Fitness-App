@@ -22,10 +22,6 @@ const registerUser = async (req, res) => {
     //validations below
     if (!firstname || !lastname || !email || !password)
       return res.status(400).json("All form fields are required");
-    // if (!firstname) return res.status(400).json("First name is required");
-    // if (!lastname) return res.status(400).json("Last name is required");
-    // if (!email) return res.status(400).json("Email is required");
-    // if (!password) return res.status(400).json("Password is required");
 
     if (!validator.isEmail(email))
       return res.status(400).json("Wrong email format. Must be a valid email");
@@ -57,17 +53,10 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
   try {
-    const { email, password } = req.body;
-
     let user = await userModel.findOne({ email });
-
-    if (!user) return res.status(400).json("Invalid email or password");
-
-    const isValidPassword = await bcrypt.compare(password, user.password);
-
-    if (!isValidPassword)
-      return res.status(400).json("Invalid email or password");
 
     //validations below
     if (!email || !password)
@@ -76,8 +65,13 @@ const loginUser = async (req, res) => {
     if (!validator.isEmail(email))
       return res.status(400).json("Wrong email format. Must be a valid email");
 
-    if (!isValidPassword)
-      return res.status(400).json("Invalid email or password");
+    if (email && password) {
+      if (!user) return res.status(400).json("Invalid email or password");
+    }
+
+    const isValidPassword = await bcrypt.compare(password, user.password);
+
+    if (!isValidPassword) return res.status(400).json("Invalid password");
 
     const token = createToken(user._id);
 
