@@ -57,9 +57,16 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
-
   try {
+    const { email, password } = req.body;
+
+    //validations below
+    if (!email || !password)
+      return res.status(400).json("All form fields are required");
+
+    if (!validator.isEmail(email))
+      return res.status(400).json("Wrong email format. Must be a valid email");
+
     let user = await userModel.findOne({ email });
 
     if (!user) return res.status(400).json("Invalid email or password");

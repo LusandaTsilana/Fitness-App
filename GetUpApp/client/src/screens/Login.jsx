@@ -14,16 +14,13 @@ import InputHeading from "../components/InputHeading";
 import BackButton from "../components/BackButton";
 import Head from "../components/Head";
 import Button from "../components/Buttons";
+
+//context functions
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
-  const {
-    registerInfo,
-    updateRegisterInfo,
-    registerUser,
-    registerError,
-    isRegisterLoading,
-  } = useContext(AuthContext);
+  const { loginUser, loginInfo, updateLoginInfo, isLoginLoading, loginError } =
+    useContext(AuthContext);
 
   return (
     <KeyboardAvoidingView
@@ -45,8 +42,8 @@ const Login = () => {
                 style={styles.input}
                 placeholder="Enter your email address"
                 onChangeText={(text) =>
-                  updateRegisterInfo({
-                    ...registerInfo,
+                  updateLoginInfo({
+                    ...loginInfo,
                     email: text,
                   })
                 }
@@ -59,23 +56,19 @@ const Login = () => {
                 style={styles.input}
                 placeholder="Enter your password"
                 onChangeText={(text) =>
-                  updateRegisterInfo({
-                    ...registerInfo,
+                  updateLoginInfo({
+                    ...loginInfo,
                     password: text,
                   })
                 }
               />
             </View>
 
-            {registerError?.error && (
-              <Text style={styles.emessage}>{registerError?.message}</Text>
+            {loginError?.error && (
+              <Text style={styles.emessage}>{loginError?.message}</Text>
             )}
 
-            <Button
-              text="Login"
-              onPress={registerUser}
-              loading={isRegisterLoading}
-            />
+            <Button text="Login" onPress={loginUser} loading={isLoginLoading} />
           </View>
         </View>
       </ScrollView>

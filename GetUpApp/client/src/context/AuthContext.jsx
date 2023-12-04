@@ -11,9 +11,9 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  //below is registrates states
   const [registerError, setRegisterError] = useState(null);
   const [isRegisterLoading, setIsRegisterLoading] = useState(false);
-
   const [registerInfo, setRegisterInfo] = useState({
     firstname: "",
     lastname: "",
@@ -21,12 +21,16 @@ export const AuthContextProvider = ({ children }) => {
     password: "",
   });
 
+  //below is login states
+  const [loginError, setLoginError] = useState(null);
+  const [isLoginLoading, setIsLoginLoading] = useState(false);
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
   });
 
   console.log("User", user);
+  console.log("Login Info", loginInfo);
 
   useEffect(() => {
     const getUser = async () => {
@@ -48,6 +52,10 @@ export const AuthContextProvider = ({ children }) => {
     setRegisterInfo(info);
   }, []);
 
+  const updateLoginInfo = useCallback((info) => {
+    setLoginInfo(info);
+  }, []);
+
   //user registration
   const registerUser = useCallback(
     async (e) => {
@@ -67,7 +75,7 @@ export const AuthContextProvider = ({ children }) => {
       }
 
       //storing user data in local storage so user doesnt have to login again when page refreshes
-      // localStorage.setItem("User", JSON.stringify(response));
+      // localStorage.setItem("User", JSON.stringify(response)); -- for web
       AsyncStorage.setItem("User", JSON.stringify(response));
       setUser(response);
     },
@@ -75,7 +83,29 @@ export const AuthContextProvider = ({ children }) => {
     [registerInfo]
   );
 
-  const loginUser = useCallback(() => {}, [loginInfo]);
+  const loginUser = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setIsLoginLoading(true);
+      setLoginError(null);
+
+      const response = await postRequest(
+        `${baseUrl}/users/login`,
+        JSON.stringify(loginInfo)
+      );
+
+      setIsLoginLoading(false);
+
+      if (response.error) {
+        return setLoginError(response);
+      }
+
+      //storing user data in local storage so user doesnt have to login again when page refreshes
+      AsyncStorage.setItem("User", JSON.stringify(response));
+      setUser(response);
+    },
+    [loginInfo]
+  );
 
   //user logout, to clear storage & states
   const logoutUser = useCallback(() => {
@@ -93,6 +123,11 @@ export const AuthContextProvider = ({ children }) => {
         registerError,
         isRegisterLoading,
         logoutUser,
+        loginUser,
+        loginInfo,
+        updateLoginInfo,
+        loginError,
+        isLoginLoading,
       }}
     >
       {children}
