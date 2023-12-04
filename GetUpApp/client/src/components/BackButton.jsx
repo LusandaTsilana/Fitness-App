@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "flex-start",
+    width: 50,
+    height: 50,
   },
 
   icon: {

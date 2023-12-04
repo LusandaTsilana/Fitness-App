@@ -34,77 +34,75 @@ const Signup = () => {
       <Head />
       <BackButton />
 
-      <ScrollView>
-        <View style={styles.box}>
-          <TextComponent content="Sign Up" />
+      <ScrollView style={styles.box}>
+        <TextComponent content="Sign Up" />
 
-          <View style={styles.form}>
-            <View>
-              <InputHeading content="First Name" />
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your first name"
-                onChangeText={(text) =>
-                  updateRegisterInfo({
-                    ...registerInfo,
-                    firstname: text,
-                  })
-                }
-              />
-            </View>
-
-            <View>
-              <InputHeading content="Last Name" />
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your last name"
-                onChangeText={(text) =>
-                  updateRegisterInfo({
-                    ...registerInfo,
-                    lastname: text,
-                  })
-                }
-              />
-            </View>
-
-            <View>
-              <InputHeading content="Email" />
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your email address"
-                onChangeText={(text) =>
-                  updateRegisterInfo({
-                    ...registerInfo,
-                    email: text,
-                  })
-                }
-              />
-            </View>
-
-            <View>
-              <InputHeading content="Password" />
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your password"
-                onChangeText={(text) =>
-                  updateRegisterInfo({
-                    ...registerInfo,
-                    password: text,
-                  })
-                }
-              />
-            </View>
-
-            {registerError?.error && (
-              <Text style={styles.emessage}>{registerError?.message}</Text>
-            )}
-
-            <Button
-              text="Sign Up"
-              onPress={registerUser}
-              loading={isRegisterLoading}
+        <View style={styles.form}>
+          <View>
+            <InputHeading content="First Name" />
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your first name"
+              onChangeText={(text) =>
+                updateRegisterInfo({
+                  ...registerInfo,
+                  firstname: text,
+                })
+              }
             />
           </View>
+
+          <View>
+            <InputHeading content="Last Name" />
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your last name"
+              onChangeText={(text) =>
+                updateRegisterInfo({
+                  ...registerInfo,
+                  lastname: text,
+                })
+              }
+            />
+          </View>
+
+          <View>
+            <InputHeading content="Email" />
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your email address"
+              onChangeText={(text) =>
+                updateRegisterInfo({
+                  ...registerInfo,
+                  email: text,
+                })
+              }
+            />
+          </View>
+
+          <View>
+            <InputHeading content="Password" />
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your password"
+              onChangeText={(text) =>
+                updateRegisterInfo({
+                  ...registerInfo,
+                  password: text,
+                })
+              }
+            />
+          </View>
+
+          {registerError?.error && (
+            <Text style={styles.emessage}>{registerError?.message}</Text>
+          )}
+
+          <Button
+            text="Sign Up"
+            onPress={registerUser}
+            loading={isRegisterLoading}
+          />
         </View>
       </ScrollView>
     </KeyboardAvoidingView>

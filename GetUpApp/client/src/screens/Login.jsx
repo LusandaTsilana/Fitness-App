@@ -31,45 +31,43 @@ const Login = () => {
       <Head />
       <BackButton />
 
-      <ScrollView>
-        <View style={styles.box}>
-          <TextComponent content="Log In" />
+      <ScrollView style={styles.box}>
+        <TextComponent content="Log In" />
 
-          <View style={styles.form}>
-            <View>
-              <InputHeading content="Email" />
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your email address"
-                onChangeText={(text) =>
-                  updateLoginInfo({
-                    ...loginInfo,
-                    email: text,
-                  })
-                }
-              />
-            </View>
-
-            <View>
-              <InputHeading content="Password" />
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your password"
-                onChangeText={(text) =>
-                  updateLoginInfo({
-                    ...loginInfo,
-                    password: text,
-                  })
-                }
-              />
-            </View>
-
-            {loginError?.error && (
-              <Text style={styles.emessage}>{loginError?.message}</Text>
-            )}
-
-            <Button text="Login" onPress={loginUser} loading={isLoginLoading} />
+        <View style={styles.form}>
+          <View>
+            <InputHeading content="Email" />
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your email address"
+              onChangeText={(text) =>
+                updateLoginInfo({
+                  ...loginInfo,
+                  email: text,
+                })
+              }
+            />
           </View>
+
+          <View>
+            <InputHeading content="Password" />
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your password"
+              onChangeText={(text) =>
+                updateLoginInfo({
+                  ...loginInfo,
+                  password: text,
+                })
+              }
+            />
+          </View>
+
+          {loginError?.error && (
+            <Text style={styles.emessage}>{loginError?.message}</Text>
+          )}
+
+          <Button text="Login" onPress={loginUser} loading={isLoginLoading} />
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
