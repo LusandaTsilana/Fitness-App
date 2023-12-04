@@ -7,7 +7,7 @@ import AppHeader from "../components/AppHeader";
 const Community = () => {
   return (
     <View>
-      <AppHeader content="Workout" showName={false} />
+      <AppHeader content="Community" showName={false} />
     </View>
   );
 };

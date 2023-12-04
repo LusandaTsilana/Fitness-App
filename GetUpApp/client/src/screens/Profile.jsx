@@ -7,7 +7,7 @@ import AppHeader from "../components/AppHeader";
 const Profile = () => {
   return (
     <View>
-      <AppHeader content="Workout" showName={false} />
+      <AppHeader content="Profile" showName={false} />
     </View>
   );
 };

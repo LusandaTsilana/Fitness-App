@@ -1,9 +1,7 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
 
 import Today from "../screens/Today";
 import Workout from "../screens/Workout";
@@ -12,6 +10,8 @@ import Profile from "../screens/Profile";
 
 //icons
 import Icon from "react-native-vector-icons/Ionicons";
+import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
+import AntDesignIcon from "react-native-vector-icons/AntDesign";
 
 // const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,8 +24,8 @@ const screenOptions = {
     right: 0,
     left: 0,
     elevation: 0,
-    height: 60,
-    background: "green",
+    height: 89,
+    backgroundColor: "#FACB95",
   },
 };
 
@@ -37,15 +37,73 @@ const AppNavigator = () => {
         component={Today}
         options={{
           tabBarIcon: ({ focused }) => {
-            <View style={{ alignItems: "center", justifyContent: "center" }}>
-              <Icon name="home-outline" size={30} color="black" />
-            </View>;
+            return (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Icon
+                  name="home-outline"
+                  size={30}
+                  color={focused ? "#9F4E04" : "black"}
+                />
+                <Text style={{ fontSize: 12, color: "black" }}>Home</Text>
+              </View>
+            );
           },
         }}
       />
-      <Tab.Screen name="Workout" component={Workout} />
-      <Tab.Screen name="Community" component={Community} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen
+        name="Workout"
+        component={Workout}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <FontAwesome5Icon
+                  name="dumbbell"
+                  size={30}
+                  color={focused ? "#9F4E04" : "black"}
+                />
+                <Text style={{ fontSize: 12, color: "black" }}>Workout</Text>
+              </View>
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Community"
+        component={Community}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Icon
+                  name="chatbubbles-outline"
+                  size={30}
+                  color={focused ? "#9F4E04" : "black"}
+                />
+                <Text style={{ fontSize: 12, color: "black" }}>Chat</Text>
+              </View>
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <AntDesignIcon
+                  name="user"
+                  size={30}
+                  color={focused ? "#9F4E04" : "black"}
+                />
+                <Text style={{ fontSize: 12, color: "black" }}>Profile</Text>
+              </View>
+            );
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 };
