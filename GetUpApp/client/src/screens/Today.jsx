@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ScrollView, Text } from "react-native";
 import React from "react";
 
 //components
@@ -8,6 +8,7 @@ const Today = () => {
   return (
     <View>
       <AppHeader content="Good day," showName={true} />
+      <ScrollView></ScrollView>
     </View>
   );
 };

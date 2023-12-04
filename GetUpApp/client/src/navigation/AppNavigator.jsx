@@ -1,6 +1,7 @@
 import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import Today from "../screens/Today";
 import Workout from "../screens/Workout";
 import Community from "../screens/Community";
