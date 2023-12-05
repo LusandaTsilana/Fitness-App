@@ -3,12 +3,15 @@ import React from "react";
 
 //components
 import AppHeader from "../components/AppHeader";
+import ImageRandom from "../components/ImageRandom";
 
 const Today = () => {
   return (
     <View>
       <AppHeader content="Good day," showName={true} />
-      <ScrollView></ScrollView>
+      <ScrollView>
+        <ImageRandom />
+      </ScrollView>
     </View>
   );
 };
