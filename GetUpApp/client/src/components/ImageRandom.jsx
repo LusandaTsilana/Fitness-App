@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const ImageRandom = () => {
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
 
   const fetchAPI = async () => {
     const response = await axios.get(
@@ -19,6 +19,8 @@ const ImageRandom = () => {
       <Pressable onPress={fetchAPI}>
         <Text>Click</Text>
       </Pressable>
+
+      <View style={styles.image}>{images.length > 0 && ()}</View>
     </View>
   );
 };
