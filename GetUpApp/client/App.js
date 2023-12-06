@@ -20,7 +20,7 @@ function InnerApp() {
 
   return (
     <NavigationContainer>
-      <View style={styles.container}>
+      <View style={styles.container} edges={["top"]}>
         <StatusBar style="auto" />
         {user ? <AppNavigator /> : <AuthNavigator />}
       </View>
