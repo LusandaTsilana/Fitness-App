@@ -9,11 +9,11 @@ const Today = () => {
   return (
     <View>
       <AppHeader content="Good day," showName={true} />
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
         <View>
           <ImageSlider />
         </View>
-      </ScrollView>
+      </View>
     </View>
   );
 };
