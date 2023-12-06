@@ -9,7 +9,7 @@ import {
 import React, { useState, useEffect } from "react";
 
 const SRC_WIDTH = Dimensions.get("window").width;
-const CARD_LENGTH = 130;
+const CARD_LENGTH = 200;
 const SPACING = SRC_WIDTH * 0.02;
 const SIDECARD_LENGTH = (SRC_WIDTH * 0.18) / 2;
 
