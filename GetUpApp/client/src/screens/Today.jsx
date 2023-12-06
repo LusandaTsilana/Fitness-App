@@ -3,13 +3,16 @@ import React from "react";
 
 //components
 import AppHeader from "../components/AppHeader";
+import ImageSlider from "../components/ImageSlider";
 
 const Today = () => {
   return (
     <View>
       <AppHeader content="Good day," showName={true} />
       <ScrollView style={styles.container}>
-        <View style={styles.carousel}></View>
+        <View>
+          <ImageSlider />
+        </View>
       </ScrollView>
     </View>
   );
