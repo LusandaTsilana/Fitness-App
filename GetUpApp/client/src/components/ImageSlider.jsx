@@ -8,10 +8,7 @@ import {
 } from "react-native";
 import React, { useState, useEffect } from "react";
 
-const SRC_WIDTH = Dimensions.get("window").width;
 const CARD_LENGTH = 130;
-const SPACING = 20;
-const SIDECARD_LENGTH = (SRC_WIDTH * 0.18) / 2;
 
 const renderItem = ({ item }) => {
   return (
