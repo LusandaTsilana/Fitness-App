@@ -19,6 +19,7 @@ const AppHeader = ({ style, content, showName }) => {
       {
         text: "Cancel",
         onPress: () => console.log("cancel pressed"),
+        style: "cancel",
       },
     ]);
   };
