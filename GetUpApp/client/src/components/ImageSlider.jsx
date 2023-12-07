@@ -1,12 +1,5 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-  Image,
-  Dimensions,
-} from "react-native";
-import React, { useState, useEffect } from "react";
+import { StyleSheet, Text, View, FlatList, Image } from "react-native";
+import React from "react";
 
 const CARD_LENGTH = 130;
 
@@ -115,7 +108,7 @@ const styles = StyleSheet.create({
     borderRadius: 10, // Add border radius for a rounded appearance
     height: 130,
     width: 114,
-    marginHorizontal: 4,
+    marginHorizontal: 2,
     marginVertical: 10,
   },
   text: {

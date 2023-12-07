@@ -11,6 +11,7 @@ const Today = () => {
     <View style={{ backgroundColor: "white", paddingHorizontal: 10 }}>
       <AppHeader content="Good day," showName={true} />
       <ScrollView style={styles.container}>
+        <View></View>
         <View>
           <TextComponent
             content="Explore"
