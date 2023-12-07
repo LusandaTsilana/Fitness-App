@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Alert } from "react-native";
 import React, { useContext } from "react";
 
 //context hook
@@ -10,6 +10,19 @@ import Button from "../components/Buttons";
 const AppHeader = ({ style, content, showName }) => {
   const { user, logoutUser } = useContext(AuthContext);
 
+  const showAlert = () => {
+    Alert.alert("Logging out", "Are you sure?", [
+      {
+        text: "Log out",
+        onPress: logoutUser,
+      },
+      {
+        text: "Cancel",
+        onPress: () => console.log("cancel pressed"),
+      },
+    ]);
+  };
+
   return (
     <View style={styles.main}>
       <View style={styles.container}>
@@ -19,7 +32,7 @@ const AppHeader = ({ style, content, showName }) => {
         </View>
         <View style={styles.right}>
           <Button
-            onPress={logoutUser}
+            onPress={showAlert}
             text="Logout"
             style={{ width: 85 }}
             styleS={{ fontSize: 15, marginVertical: 10 }}
