@@ -64,11 +64,11 @@ const ImageSlider = () => {
     {
       source: require("../../assets/fitnessmodels/abs-girl.png"),
       style: {
-        width: 108,
-        height: 115,
+        width: 105,
+        height: 109,
         backgroundColor: "#E4D2D2",
         marginTop: 12,
-        marginLeft: 4,
+        marginLeft: 7.5,
       },
     },
 
