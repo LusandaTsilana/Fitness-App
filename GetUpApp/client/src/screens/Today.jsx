@@ -7,13 +7,13 @@ import ImageSlider from "../components/ImageSlider";
 
 const Today = () => {
   return (
-    <View>
+    <View style={{ backgroundColor: "white" }}>
       <AppHeader content="Good day," showName={true} />
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View>
           <ImageSlider />
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
