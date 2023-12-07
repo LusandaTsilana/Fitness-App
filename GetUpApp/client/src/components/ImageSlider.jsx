@@ -24,6 +24,7 @@ const renderItem = ({ item }) => {
       >
         <Image source={item.source} style={[styles.image, item.style]} />
       </View>
+      <Text style={styles.text}>{item.text}</Text>
     </View>
   );
 };
@@ -32,6 +33,7 @@ const ImageSlider = () => {
   const DATA = [
     {
       source: require("../../assets/fitnessmodels/yoga-girl.png"),
+      text: "Yoga",
       style: {
         width: 95,
         height: 111,
@@ -41,6 +43,7 @@ const ImageSlider = () => {
     },
     {
       source: require("../../assets/fitnessmodels/boxing-girl.png"),
+      text: "Boxing",
       style: {
         width: 75,
         height: 121,
@@ -52,6 +55,7 @@ const ImageSlider = () => {
 
     {
       source: require("../../assets/fitnessmodels/dance-girl.png"),
+      text: "Dance",
       style: {
         width: 101,
         height: 121,
@@ -63,6 +67,7 @@ const ImageSlider = () => {
 
     {
       source: require("../../assets/fitnessmodels/abs-girl.png"),
+      text: "Abs",
       style: {
         width: 105,
         height: 109,
@@ -74,6 +79,7 @@ const ImageSlider = () => {
 
     {
       source: require("../../assets/fitnessmodels/legs-girl.png"),
+      text: "Legs",
       style: {
         width: 114,
         height: 104,
@@ -87,7 +93,7 @@ const ImageSlider = () => {
       data={DATA}
       renderItem={renderItem}
       keyExtractor={(item, index) => index.toString()}
-      horizontal
+      horizontal={true}
       showsHorizontalScrollIndicator={false}
     />
   );
@@ -98,7 +104,7 @@ export default ImageSlider;
 const styles = StyleSheet.create({
   card: {
     width: CARD_LENGTH,
-    height: 170,
+    height: 180,
     overflow: "hidden",
     backgroundColor: "white",
   },
@@ -112,7 +118,10 @@ const styles = StyleSheet.create({
     borderRadius: 10, // Add border radius for a rounded appearance
     height: 130,
     width: 114,
-    marginHorizontal: 10,
+    marginHorizontal: 4,
     marginVertical: 10,
+  },
+  text: {
+    textAlign: "center",
   },
 });
