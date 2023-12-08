@@ -1,26 +1,53 @@
-import { StyleSheet, View, Pressable, Text } from "react-native";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { View, Image, StyleSheet } from "react-native";
 
 const ImageRandom = () => {
   const accessKey = "5l9h_GhQf-kDJACFyATTW_AUqOuiuP7XUCAEEqTBLw8";
   const collectionID = "huHvlEz1eWg";
+  const [randomImage, setRandomImage] = useState(null);
 
-  const getImagesFromApi = () => {
-    return fetch(
-      `https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        // return json;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  useEffect(() => {
+    const getImagesFromApi = () => {
+      fetch(
+        `https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const randomImage = data[Math.floor(Math.random() * data.length)];
+          setRandomImage(randomImage);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
 
-  getImagesFromApi();
+    getImagesFromApi();
+  }, []); // Empty dependency array to run the effect only once when the component mounts
+
+  return (
+    <View style={styles.container}>
+      {randomImage && (
+        <Image
+          source={{ uri: randomImage.urls.regular }}
+          style={styles.image}
+        />
+      )}
+    </View>
+  );
 };
-const styles = StyleSheet.create({});
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  image: {
+    width: "100%",
+    height: 325,
+    resizeMode: "cover",
+    borderRadius: 3,
+  },
+});
+
 export default ImageRandom;
