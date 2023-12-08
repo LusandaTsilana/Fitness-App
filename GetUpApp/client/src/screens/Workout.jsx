@@ -7,7 +7,7 @@ import AppHeader from "../components/AppHeader";
 const Workout = () => {
   return (
     <View>
-      <AppHeader content="Workout" showName={false} />
+      <AppHeader content="Workout" showName={false} showLogout={false} />
     </View>
   );
 };

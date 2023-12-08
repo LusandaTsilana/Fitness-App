@@ -9,13 +9,13 @@ import TextComponent from "../components/TextComponent";
 const Today = () => {
   return (
     <View style={{ backgroundColor: "white", paddingHorizontal: 10 }}>
-      <AppHeader content="Good day," showName={true} />
+      <AppHeader content="Good day," showName={true} showLogout={false} />
       <ScrollView style={styles.container}>
         <View></View>
         <View>
           <TextComponent
             content="Explore"
-            style={{ textAlign: "left", fontSize: 24, marginLeft: 10 }}
+            style={{ textAlign: "left", fontSize: 24, marginLeft: 15 }}
           />
           <ImageSlider />
         </View>

@@ -7,7 +7,7 @@ import AppHeader from "../components/AppHeader";
 const Profile = () => {
   return (
     <View>
-      <AppHeader content="Profile" showName={false} />
+      <AppHeader content="Profile" showName={false} showLogout={true} />
     </View>
   );
 };

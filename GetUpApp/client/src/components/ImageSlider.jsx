@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React from "react";
 
-const CARD_LENGTH = 130;
-
 const renderItem = ({ item }) => {
   return (
     <View style={styles.card}>
@@ -93,7 +91,7 @@ export default ImageSlider;
 
 const styles = StyleSheet.create({
   card: {
-    width: CARD_LENGTH,
+    width: 130,
     height: 180,
     overflow: "hidden",
     backgroundColor: "white",

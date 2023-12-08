@@ -7,7 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 //components
 import Button from "../components/Buttons";
 
-const AppHeader = ({ style, content, showName }) => {
+const AppHeader = ({ style, content, showName, showLogout }) => {
   const { user, logoutUser } = useContext(AuthContext);
 
   const showAlert = () => {
@@ -32,12 +32,14 @@ const AppHeader = ({ style, content, showName }) => {
           {showName && <Text style={styles.name}>{user.firstname}</Text>}
         </View>
         <View style={styles.right}>
-          <Button
-            onPress={showAlert}
-            text="Logout"
-            style={{ width: 85 }}
-            styleS={{ fontSize: 15, marginVertical: 10 }}
-          />
+          {showLogout && (
+            <Button
+              onPress={showAlert}
+              text="Logout"
+              style={{ width: 85 }}
+              styleS={{ fontSize: 15, marginVertical: 10 }}
+            />
+          )}
         </View>
       </View>
     </View>
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginVertical: 25,
-    marginHorizontal: 30,
+    marginHorizontal: 15,
   },
 
   left: {
