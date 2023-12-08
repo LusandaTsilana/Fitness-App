@@ -5,13 +5,16 @@ import React from "react";
 import AppHeader from "../components/AppHeader";
 import ImageSlider from "../components/ImageSlider";
 import TextComponent from "../components/TextComponent";
+import ImageRandom from "../components/ImageRandom";
 
 const Today = () => {
   return (
     <View style={{ backgroundColor: "white", paddingHorizontal: 10 }}>
       <AppHeader content="Good day," showName={true} showLogout={false} />
       <ScrollView style={styles.container}>
-        <View></View>
+        <View>
+          <ImageRandom />
+        </View>
         <View>
           <TextComponent
             content="Explore"
