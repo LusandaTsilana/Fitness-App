@@ -9,7 +9,12 @@ import ImageRandom from "../components/ImageRandom";
 
 const Today = () => {
   return (
-    <View style={{ backgroundColor: "white", paddingHorizontal: 10 }}>
+    <View
+      style={{
+        backgroundColor: "white",
+        paddingHorizontal: 10,
+      }}
+    >
       <AppHeader content="Good day," showName={true} showLogout={false} />
       <ScrollView style={styles.container}>
         <View>

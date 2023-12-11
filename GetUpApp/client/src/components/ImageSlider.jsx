@@ -1,23 +1,33 @@
-import { StyleSheet, Text, View, FlatList, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Image,
+  Pressable,
+} from "react-native";
 import React from "react";
 
 const renderItem = ({ item }) => {
   return (
     <View style={styles.card}>
-      <View
-        style={[
-          styles.imagebox,
-          { backgroundColor: item.style.backgroundColor },
-        ]}
-      >
-        <Image source={item.source} style={[styles.image, item.style]} />
-      </View>
-      <Text style={styles.text}>{item.text}</Text>
+      <Pressable>
+        <View
+          style={[
+            styles.imagebox,
+            { backgroundColor: item.style.backgroundColor },
+          ]}
+        >
+          <Image source={item.source} style={[styles.image, item.style]} />
+        </View>
+
+        <Text style={styles.text}>{item.text}</Text>
+      </Pressable>
     </View>
   );
 };
 
-const ImageSlider = () => {
+const ImageSlider = ({ navigation }) => {
   const DATA = [
     {
       source: require("../../assets/fitnessmodels/yoga-girl.png"),

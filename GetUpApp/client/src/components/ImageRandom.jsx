@@ -3,7 +3,7 @@ import { View, Image, StyleSheet } from "react-native";
 
 const ImageRandom = () => {
   const accessKey = "5l9h_GhQf-kDJACFyATTW_AUqOuiuP7XUCAEEqTBLw8";
-  const collectionID = "huHvlEz1eWg";
+  const collectionID = "2PaSlEitX-o";
   const [randomImage, setRandomImage] = useState(null);
 
   useEffect(() => {
