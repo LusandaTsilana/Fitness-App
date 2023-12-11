@@ -7,18 +7,17 @@ const ImageRandom = () => {
   const [randomImage, setRandomImage] = useState(null);
 
   useEffect(() => {
-    const getImagesFromApi = () => {
-      fetch(
-        `https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          const randomImage = data[Math.floor(Math.random() * data.length)];
-          setRandomImage(randomImage);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+    const getImagesFromApi = async () => {
+      try {
+        const response = await fetch(
+          `https://api.unsplash.com/collections/${collectionID}/photos/?client_id=${accessKey}`
+        );
+        const data = await response.json();
+        const randomImage = data[Math.floor(Math.random() * data.length)];
+        setRandomImage(randomImage);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     getImagesFromApi();
@@ -30,6 +29,7 @@ const ImageRandom = () => {
         <Image
           source={{ uri: randomImage.urls.regular }}
           style={styles.image}
+          accessibilityLabel="random-image"
         />
       )}
     </View>

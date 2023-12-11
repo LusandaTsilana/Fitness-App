@@ -1,4 +1,4 @@
-export const baseUrl = "http://172.17.165.195:5000/api";
+export const baseUrl = "http://172.17.180.87:5000/api";
 
 export const postRequest = async (url, body) => {
   //the response will carry either the error message or the data if it is correct
