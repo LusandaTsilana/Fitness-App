@@ -27,7 +27,7 @@ const renderItem = ({ item }) => {
   );
 };
 
-const ImageSlider = ({ navigation }) => {
+const ImageSlider = () => {
   const DATA = [
     {
       source: require("../../assets/fitnessmodels/yoga-girl.png"),
