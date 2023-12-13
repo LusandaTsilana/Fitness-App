@@ -6,6 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 
 import { AuthContextProvider, AuthContext } from "./src/context/AuthContext";
+import { ChatContextProvider } from "./src/context/ChatContext";
 
 export default function App() {
   return (
@@ -19,12 +20,14 @@ function InnerApp() {
   const { user } = useContext(AuthContext);
 
   return (
-    <NavigationContainer>
-      <View style={styles.container} edges={["top"]}>
-        <StatusBar style="auto" />
-        {user ? <AppNavigator /> : <AuthNavigator />}
-      </View>
-    </NavigationContainer>
+    <ChatContextProvider user={user}>
+      <NavigationContainer>
+        <View style={styles.container} edges={["top"]}>
+          <StatusBar style="auto" />
+          {user ? <AppNavigator /> : <AuthNavigator />}
+        </View>
+      </NavigationContainer>
+    </ChatContextProvider>
   );
 }
 
