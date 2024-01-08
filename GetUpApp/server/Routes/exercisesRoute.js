@@ -1,22 +1,27 @@
 const express = require("express");
+const {
+  getAllExercises,
+  getExerciseById,
+  createExercise,
+  updateExerciseById,
+  deleteExerciseById,
+} = require("../Controllers/exercisesControllers");
 
 const router = express.Router();
 
 //getting all exercises
-router.get("/", (req, res) => {
-  res.send("Hello");
-});
+router.get("/", getAllExercises);
 
 //getting one exercise
-router.get("/:id", (req, res) => {});
+router.get("/:id", getExerciseById);
 
 //create exercise
-router.post("/", (req, res) => {});
+router.post("/", createExercise);
 
 //update exercise
-router.patch("/:id", (req, res) => {});
+router.patch("/:id", updateExerciseById);
 
 //delete exercise
-router.delete("/:id", (req, res) => {});
+router.delete("/:id", deleteExerciseById);
 
 module.exports = router;
