@@ -14,6 +14,8 @@ const Community = () => {
   return (
     <View>
       <AppHeader content="Chat" showName={false} showLogout={false} />
+
+      <View style={styles.container}></View>
     </View>
   );
 };
