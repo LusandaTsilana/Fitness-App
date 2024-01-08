@@ -1,4 +1,4 @@
-// controllers/exercisesController.js
+// model schema
 const Exercise = require("../Models/exercisesModel");
 
 // Get all exercises
@@ -14,7 +14,18 @@ const getAllExercises = async (req, res) => {
 // Get a single exercise by ID
 const getExerciseById = async (req, res) => {
   res.json(res.exercise);
-  console.log("tadaaa");
+};
+
+// get exercises by category
+const getExerciseByCategory = async (req, res) => {
+  const category = req.params.category;
+
+  try {
+    const exercises = await Exercise.find({ category });
+    res.json(exercises);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 // Create a new exercise
@@ -77,6 +88,7 @@ const deleteExerciseById = async (req, res) => {
 module.exports = {
   getAllExercises,
   getExerciseById,
+  getExerciseByCategory,
   createExercise,
   updateExerciseById,
   deleteExerciseById,
