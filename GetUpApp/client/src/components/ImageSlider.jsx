@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   imagebox: {
-    borderRadius: 10, // Add border radius for a rounded appearance
+    borderRadius: 10,
     height: 130,
     width: 114,
     marginHorizontal: 2,

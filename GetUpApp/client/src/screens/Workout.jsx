@@ -4,6 +4,7 @@ import React from "react";
 //components
 import AppHeader from "../components/AppHeader";
 import TextComponent from "../components/TextComponent";
+import BodyPartsGrid from "../components/BodyPartsGrid";
 
 const Workout = () => {
   return (
@@ -17,6 +18,7 @@ const Workout = () => {
         content="Programs"
         style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
       />
+      <BodyPartsGrid />
     </View>
   );
 };
