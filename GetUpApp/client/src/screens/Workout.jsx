@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 
 //components
@@ -14,11 +14,18 @@ const Workout = () => {
       }}
     >
       <AppHeader content="Workout" showName={false} showLogout={false} />
-      <TextComponent
-        content="Programs"
-        style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
-      />
-      <BodyPartsGrid />
+
+      <ScrollView>
+        <TextComponent
+          content="Programs"
+          style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
+        />
+        <BodyPartsGrid />
+        <TextComponent
+          content="My Workouts"
+          style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
+        />
+      </ScrollView>
     </View>
   );
 };
