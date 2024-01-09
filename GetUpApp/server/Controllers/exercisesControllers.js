@@ -13,7 +13,19 @@ const getAllExercises = async (req, res) => {
 
 // Get a single exercise by ID
 const getExerciseById = async (req, res) => {
-  res.json(res.exercise);
+  const exerciseId = req.params.id;
+
+  try {
+    const exercise = await Exercise.findById(exerciseId);
+
+    if (!exercise) {
+      return res.status(404).json({ error: "Exercise not found" });
+    }
+
+    res.json(exercise);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 // get exercises by category

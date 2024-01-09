@@ -3,11 +3,20 @@ import React from "react";
 
 //components
 import AppHeader from "../components/AppHeader";
+import TextComponent from "../components/TextComponent";
 
 const Workout = () => {
   return (
-    <View>
+    <View
+      style={{
+        backgroundColor: "white",
+      }}
+    >
       <AppHeader content="Workout" showName={false} showLogout={false} />
+      <TextComponent
+        content="Programs"
+        style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
+      />
     </View>
   );
 };
