@@ -4,7 +4,14 @@ import React from "react";
 const FullBody = () => {
   return (
     <View>
-      <Text>FullBody</Text>
+      <AppHeader
+        content="Full Body"
+        showName={false}
+        showLogout={false}
+        style={{
+          fontSize: 20,
+        }}
+      />
     </View>
   );
 };

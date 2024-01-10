@@ -4,7 +4,14 @@ import React from "react";
 const Abs = () => {
   return (
     <View>
-      <Text>Abs</Text>
+      <AppHeader
+        content="Abs"
+        showName={false}
+        showLogout={false}
+        style={{
+          fontSize: 20,
+        }}
+      />
     </View>
   );
 };

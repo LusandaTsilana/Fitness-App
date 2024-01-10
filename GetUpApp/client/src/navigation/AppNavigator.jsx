@@ -2,19 +2,22 @@ import React from "react";
 import { View, Text } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Today from "../screens/Today";
 import Workout from "../screens/Workout";
 import Community from "../screens/Community";
 import Profile from "../screens/Profile";
+import MuscleGroupNavigator from "./MuscleGroupNavigator";
 
 //icons
 import Icon from "react-native-vector-icons/Ionicons";
 import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 
-// const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
 const screenOptions = {
   tabBarShowLabel: false,
   headerShown: false,
@@ -51,8 +54,8 @@ const AppNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Workout"
-        component={Workout}
+        name="WorkoutStack"
+        component={WorkoutStack}
         options={{
           tabBarIcon: ({ focused }) => {
             return (
@@ -105,6 +108,23 @@ const AppNavigator = () => {
         }}
       />
     </Tab.Navigator>
+  );
+};
+
+const WorkoutStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Workout"
+        component={Workout}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="MuscleGroupNavigator"
+        component={MuscleGroupNavigator}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
 };
 

@@ -4,7 +4,14 @@ import React from "react";
 const ButtockLegs = () => {
   return (
     <View>
-      <Text>ButtockLegs</Text>
+      <AppHeader
+        content="Buttock & Legs"
+        showName={false}
+        showLogout={false}
+        style={{
+          fontSize: 20,
+        }}
+      />
     </View>
   );
 };
