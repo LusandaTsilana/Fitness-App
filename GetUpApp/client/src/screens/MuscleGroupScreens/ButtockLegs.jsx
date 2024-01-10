@@ -1,6 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
+//components
+import AppHeader from "../../components/AppHeader";
+import BackButton from "../../components/BackButton";
+
 const ButtockLegs = () => {
   return (
     <View>
@@ -12,6 +16,7 @@ const ButtockLegs = () => {
           fontSize: 20,
         }}
       />
+      <BackButton />
     </View>
   );
 };

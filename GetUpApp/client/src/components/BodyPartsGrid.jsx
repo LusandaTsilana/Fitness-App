@@ -27,7 +27,13 @@ const BodyPartsGrid = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.rightbox}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("MuscleGroupNavigator", {
+                screen: "Abs",
+              })
+            }
+          >
             <Image
               style={{ width: 150, height: 132, borderRadius: 10 }}
               source={Abs}
@@ -39,7 +45,13 @@ const BodyPartsGrid = () => {
 
       <View style={styles.row}>
         <View style={styles.leftbox}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("MuscleGroupNavigator", {
+                screen: "ButtockLegs",
+              })
+            }
+          >
             <Image
               style={{ width: 150, height: 133, borderRadius: 10 }}
               source={Buttock}
@@ -48,7 +60,13 @@ const BodyPartsGrid = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.rightbox}>
-          <TouchableOpacity on>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("MuscleGroupNavigator", {
+                screen: "FullBody",
+              })
+            }
+          >
             <Image
               style={{ width: 76, height: 132, marginLeft: 40 }}
               source={FullBody}
