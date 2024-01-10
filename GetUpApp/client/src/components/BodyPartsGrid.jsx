@@ -1,5 +1,6 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 //images
 import ArmsShoulders from "../../assets/fitnessmodels/amrsshoulders.png";
@@ -8,36 +9,52 @@ import Abs from "../../assets/fitnessmodels/abss.png";
 import FullBody from "../../assets/fitnessmodels/fullbody.png";
 
 const BodyPartsGrid = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.main}>
       <View style={styles.row}>
         <View style={styles.leftbox}>
-          <Image style={{ width: 150, height: 132 }} source={ArmsShoulders} />
-          <Text style={styles.title}>Arms & Shoulders</Text>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("MuscleGroupNavigator", {
+                screen: "ArmShoulders",
+              })
+            }
+          >
+            <Image style={{ width: 150, height: 132 }} source={ArmsShoulders} />
+            <Text style={styles.title}>Arms & Shoulders</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.rightbox}>
-          <Image
-            style={{ width: 150, height: 132, borderRadius: 10 }}
-            source={Abs}
-          />
-          <Text style={styles.title}>Abs</Text>
+          <TouchableOpacity>
+            <Image
+              style={{ width: 150, height: 132, borderRadius: 10 }}
+              source={Abs}
+            />
+            <Text style={styles.title}>Abs</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
       <View style={styles.row}>
         <View style={styles.leftbox}>
-          <Image
-            style={{ width: 150, height: 133, borderRadius: 10 }}
-            source={Buttock}
-          />
-          <Text style={styles.title}>Buttock & Legs</Text>
+          <TouchableOpacity>
+            <Image
+              style={{ width: 150, height: 133, borderRadius: 10 }}
+              source={Buttock}
+            />
+            <Text style={styles.title}>Buttock & Legs</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.rightbox}>
-          <Image
-            style={{ width: 76, height: 132, marginLeft: 40 }}
-            source={FullBody}
-          />
-          <Text style={styles.title}>Full Body</Text>
+          <TouchableOpacity on>
+            <Image
+              style={{ width: 76, height: 132, marginLeft: 40 }}
+              source={FullBody}
+            />
+            <Text style={styles.title}>Full Body</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
