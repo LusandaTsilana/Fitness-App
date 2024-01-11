@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, Text, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -15,7 +15,7 @@ const BodyPartsGrid = () => {
     <View style={styles.main}>
       <View style={styles.row}>
         <View style={styles.leftbox}>
-          <TouchableOpacity
+          <Pressable
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "ArmShoulders",
@@ -24,10 +24,10 @@ const BodyPartsGrid = () => {
           >
             <Image style={{ width: 150, height: 132 }} source={ArmsShoulders} />
             <Text style={styles.title}>Arms</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
         <View style={styles.rightbox}>
-          <TouchableOpacity
+          <Pressable
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "Abs",
@@ -39,13 +39,13 @@ const BodyPartsGrid = () => {
               source={Abs}
             />
             <Text style={styles.title}>Abs</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
 
       <View style={styles.row}>
         <View style={styles.leftbox}>
-          <TouchableOpacity
+          <Pressable
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "ButtockLegs",
@@ -57,10 +57,10 @@ const BodyPartsGrid = () => {
               source={Buttock}
             />
             <Text style={styles.title}>Buttock & Legs</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
         <View style={styles.rightbox}>
-          <TouchableOpacity
+          <Pressable
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "FullBody",
@@ -72,7 +72,7 @@ const BodyPartsGrid = () => {
               source={FullBody}
             />
             <Text style={styles.title}>Full Body</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
     </View>
