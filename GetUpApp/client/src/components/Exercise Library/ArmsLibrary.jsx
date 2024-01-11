@@ -78,8 +78,6 @@ export default ArmsLibrary;
 
 const styles = StyleSheet.create({
   card: {
-    width: 130,
-    height: 180,
     overflow: "hidden",
     backgroundColor: "white",
   },
