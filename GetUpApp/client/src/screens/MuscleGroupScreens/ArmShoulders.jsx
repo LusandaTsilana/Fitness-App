@@ -2,25 +2,36 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 //components
-import AppHeader from "../../components/AppHeader";
-import BackButton from "../../components/BackButton";
+import ExercisesHeader from "../../components/ExercisesHeader";
+import TextComponent from "../../components/TextComponent";
+import Button from "../../components/Buttons";
+import ArmsLibrary from "../../components/Exercise Library/ArmsLibrary";
 
-const ArmShoulders = () => {
+const Abs = () => {
   return (
     <View>
-      <AppHeader
-        content="Arms & Shoulders"
-        showName={false}
-        showLogout={false}
-        style={{
-          fontSize: 20,
-        }}
-      />
-      <BackButton />
+      <View>
+        <ExercisesHeader content="Arms" />
+      </View>
+      <View style={{ backgroundColor: "white" }}>
+        <View style={{ alignItems: "center", justifyContent: "center" }}>
+          <Button text="Start" />
+        </View>
+        <TextComponent
+          content="Exercises"
+          style={{ textAlign: "left", fontSize: 20, marginLeft: 15 }}
+        />
+
+        <View style={styles.exercises}>
+          <View>
+            <ArmsLibrary />
+          </View>
+        </View>
+      </View>
     </View>
   );
 };
 
-export default ArmShoulders;
+export default Abs;
 
 const styles = StyleSheet.create({});

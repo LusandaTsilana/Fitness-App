@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     color: "black",
     paddingHorizontal: 20,
     paddingVertical: 5,
-    backgroundColor: "#E88328",
+    backgroundColor: "white",
   },
 });
 export default BackButton;

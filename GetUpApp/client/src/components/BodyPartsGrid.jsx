@@ -23,7 +23,7 @@ const BodyPartsGrid = () => {
             }
           >
             <Image style={{ width: 150, height: 132 }} source={ArmsShoulders} />
-            <Text style={styles.title}>Arms & Shoulders</Text>
+            <Text style={styles.title}>Arms</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.rightbox}>

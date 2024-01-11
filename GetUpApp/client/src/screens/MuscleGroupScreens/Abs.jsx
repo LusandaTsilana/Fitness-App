@@ -1,24 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-import AppHeader from "../../components/AppHeader";
-import BackButton from "../../components/BackButton";
+import ExercisesHeader from "../../components/ExercisesHeader";
 
 const Abs = () => {
   return (
     <View>
       <View>
-        <AppHeader
-          content="Abs"
-          showName={false}
-          showLogout={false}
-          style={{
-            fontSize: 20,
-          }}
-        />
-      </View>
-      <View>
-        <BackButton />
+        <ExercisesHeader content="Abs" />
       </View>
     </View>
   );
