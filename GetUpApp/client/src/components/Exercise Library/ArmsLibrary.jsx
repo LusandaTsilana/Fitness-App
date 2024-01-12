@@ -11,8 +11,8 @@ import React from "react";
 
 const renderItem = ({ item }) => {
   return (
-    <ScrollView
-      contentContainerStyle={{
+    <View
+      style={{
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -21,6 +21,7 @@ const renderItem = ({ item }) => {
       <View style={styles.card}>
         <View style={{ marginLeft: 10 }}>
           <Text style={styles.text}>{item.text}</Text>
+          <Text style={styles.duration}>{item.duration}</Text>
         </View>
         <View
           style={[
@@ -29,27 +30,33 @@ const renderItem = ({ item }) => {
           ]}
         >
           <Pressable>
-            <Image source={item.source} style={[styles.image, item.style]} />
+            <Image
+              source={item.source}
+              style={[styles.image, item.style]}
+              cache={"force-cache"}
+            />
           </Pressable>
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
 const ArmsLibrary = () => {
   const DATA = [
     {
-      source: require("../../../assets/ExerciseGifs/neck-stretch.gif"),
+      source: require("../../../assets/ExerciseGifs/NeckRoll.gif"),
       text: "Neck Stretch",
+      duration: "Time: 10s",
       style: {
         width: 148.29,
         height: 124,
       },
     },
     {
-      source: require("../../../assets/ExerciseGifs/arm-stretch.gif"),
+      source: require("../../../assets/ExerciseGifs/ArmSwing.gif"),
       text: "Arm Stretch",
+      duration: "Time: 20s",
       style: {
         width: 138.73,
         height: 124,
@@ -58,8 +65,9 @@ const ArmsLibrary = () => {
     },
 
     {
-      source: require("../../../assets/ExerciseGifs/tricep-stretch.gif"),
+      source: require("../../../assets/ExerciseGifs/static-tricep-stretch.gif"),
       text: "Left Tricep Stretch",
+      duration: "Time: 10s",
       style: {
         width: 101,
         height: 121,
@@ -67,12 +75,40 @@ const ArmsLibrary = () => {
     },
 
     {
-      source: require("../../../assets/ExerciseGifs/tricep-stretch.gif"),
+      source: require("../../../assets/ExerciseGifs/static-tricep-stretch.gif"),
       text: "Right Tricep Stretch",
+      duration: "Time: 10s",
       style: {
         width: 101,
         height: 121,
         transform: [{ scaleX: -1 }],
+      },
+    },
+    {
+      source: require("../../../assets/ExerciseGifs/TricepDip.gif"),
+      text: "Tricep Dips",
+      duration: "x 25",
+      style: {
+        width: 138,
+        height: 124,
+      },
+    },
+    {
+      source: require("../../../assets/ExerciseGifs/Push-Up.gif"),
+      text: "Push Ups",
+      duration: "x 20",
+      style: {
+        width: 138,
+        height: 124,
+      },
+    },
+    {
+      source: require("../../../assets/ExerciseGifs/air-box.gif"),
+      text: "Air Punches",
+      duration: "Time: 30s",
+      style: {
+        width: 138,
+        height: 124,
       },
     },
   ];
@@ -102,13 +138,18 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    resizeMode: "cover",
     borderRadius: 10,
     marginRight: 10,
   },
 
   text: {
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 18,
+  },
+
+  duration: {
+    fontSize: 13,
+    marginTop: 10,
+    color: "#226FE3",
   },
 });

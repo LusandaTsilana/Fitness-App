@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 
 //components
@@ -9,7 +9,7 @@ import ArmsLibrary from "../../components/Exercise Library/ArmsLibrary";
 
 const Abs = () => {
   return (
-    <View>
+    <ScrollView style={{ marginBottom: 100, backgroundColor: "white" }}>
       <View>
         <ExercisesHeader content="Arms" />
       </View>
@@ -28,7 +28,7 @@ const Abs = () => {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
