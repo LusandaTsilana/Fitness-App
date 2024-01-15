@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,10 +7,22 @@ import {
   Image,
   Pressable,
   ScrollView,
+  Modal,
+  Video,
+  TouchableOpacity,
 } from "react-native";
-import React from "react";
 
 const renderItem = ({ item }) => {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const handlePress = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
   return (
     <View
       style={{
@@ -31,7 +44,7 @@ const renderItem = ({ item }) => {
             { backgroundColor: item.style.backgroundColor },
           ]}
         >
-          <Pressable>
+          <Pressable onPress={handlePress}>
             <Image
               source={item.source}
               style={[styles.image, item.style]}
@@ -40,6 +53,38 @@ const renderItem = ({ item }) => {
           </Pressable>
         </View>
       </View>
+
+      {/* Modal to display exercise details/instructions and video */}
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={{ fontSize: 20, marginBottom: 10 }}>
+              {item.modalTitle}
+            </Text>
+            <Image
+              source={item.modalImage}
+              style={{
+                width: 200,
+                height: 150,
+                borderRadius: 10,
+                marginBottom: 10,
+              }}
+            />
+            <Video
+              source={item.modalVideo}
+              style={{ width: 200, height: 150, borderRadius: 10 }}
+            />
+            <TouchableOpacity onPress={closeModal}>
+              <Text style={{ color: "blue", marginTop: 10 }}>Close Modal</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -54,6 +99,9 @@ const AbsLibrary = () => {
         width: 138,
         height: 124,
       },
+      modalTitle: "Side Stretch",
+      modalVideo: "../../../assets/ExerciseGifs/SideStretch.gif",
+      modalDescription: "lorum....",
     },
     {
       source: require("../../../assets/ExerciseGifs/Cobra.gif"),
@@ -171,5 +219,18 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginTop: 10,
     color: "#226FE3",
+  },
+
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  modalContent: {
+    backgroundColor: "white",
+    padding: 20,
+    borderRadius: 10,
+    elevation: 5,
   },
 });
