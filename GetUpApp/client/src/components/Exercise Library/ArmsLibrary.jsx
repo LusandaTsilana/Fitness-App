@@ -20,7 +20,9 @@ const renderItem = ({ item }) => {
     >
       <View style={styles.card}>
         <View style={{ marginLeft: 10 }}>
-          <Text style={styles.text}>{item.text}</Text>
+          <View style={{ width: 150 }}>
+            <Text style={styles.text}>{item.text}</Text>
+          </View>
           <Text style={styles.duration}>{item.duration}</Text>
         </View>
         <View
@@ -143,7 +145,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    textAlign: "center",
+    textAlign: "left",
     fontSize: 18,
   },
 

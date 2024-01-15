@@ -9,7 +9,7 @@ import ArmsLibrary from "../../components/Exercise Library/ArmsLibrary";
 
 const Abs = () => {
   return (
-    <ScrollView style={{ marginBottom: 100, backgroundColor: "white" }}>
+    <ScrollView style={{ marginBottom: 50, backgroundColor: "white" }}>
       <View>
         <ExercisesHeader content="Arms" />
       </View>

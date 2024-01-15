@@ -20,7 +20,9 @@ const renderItem = ({ item }) => {
     >
       <View style={styles.card}>
         <View style={{ marginLeft: 10 }}>
-          <Text style={styles.text}>{item.text}</Text>
+          <View style={{ width: 150 }}>
+            <Text style={styles.text}>{item.text}</Text>
+          </View>
           <Text style={styles.duration}>{item.duration}</Text>
         </View>
         <View
@@ -45,66 +47,84 @@ const renderItem = ({ item }) => {
 const AbsLibrary = () => {
   const DATA = [
     {
-      source: require("../../../assets/ExerciseGifs/"),
-      text: "Neck Stretch",
-      duration: "Time: 10s",
+      source: require("../../../assets/ExerciseGifs/SideStretch.gif"),
+      text: "Alternating Side Stretch",
+      duration: "Time: 30s",
       style: {
-        width: 148.29,
+        width: 138,
         height: 124,
       },
     },
     {
-      source: require("../../../assets/ExerciseGifs/ArmSwing.gif"),
-      text: "Arm Stretch",
+      source: require("../../../assets/ExerciseGifs/Cobra.gif"),
+      text: "Cobra Stretch",
       duration: "Time: 20s",
       style: {
-        width: 138.73,
+        width: 138,
         height: 124,
         marginLeft: 20,
       },
     },
 
     {
-      source: require("../../../assets/ExerciseGifs/static-tricep-stretch.gif"),
-      text: "Left Tricep Stretch",
-      duration: "Time: 10s",
+      source: require("../../../assets/ExerciseGifs/400x400_Cat_Cow_Pose.gif"),
+      text: "Cat Pose Stretch",
+      duration: "Time: 20s",
       style: {
-        width: 101,
+        width: 138,
         height: 121,
       },
     },
 
     {
-      source: require("../../../assets/ExerciseGifs/static-tricep-stretch.gif"),
-      text: "Right Tricep Stretch",
-      duration: "Time: 10s",
+      source: require("../../../assets/ExerciseGifs/OppositeExtensions.gif"),
+      text: "Left Leg & Right Arm Extensions",
+      duration: "x 15",
       style: {
-        width: 101,
+        width: 138,
         height: 121,
         transform: [{ scaleX: -1 }],
       },
     },
     {
-      source: require("../../../assets/ExerciseGifs/TricepDip.gif"),
-      text: "Tricep Dips",
-      duration: "x 25",
+      source: require("../../../assets/ExerciseGifs/OppositeExtensions.gif"),
+      text: "Right Leg & Left Arm Extensions",
+      duration: "x 15",
       style: {
         width: 138,
         height: 124,
       },
     },
     {
-      source: require("../../../assets/ExerciseGifs/Push-Up.gif"),
-      text: "Push Ups",
-      duration: "x 20",
+      source: require("../../../assets/ExerciseGifs/RussianTwist.gif"),
+      text: "Russian Twist",
+      duration: "x 20 each side",
       style: {
         width: 138,
         height: 124,
       },
     },
     {
-      source: require("../../../assets/ExerciseGifs/air-box.gif"),
-      text: "Air Punches",
+      source: require("../../../assets/ExerciseGifs/BicycleCrunch.gif"),
+      text: "Bicycle Crunch",
+      duration: "Time: 30s",
+      style: {
+        width: 138,
+        height: 124,
+      },
+    },
+    {
+      source: require("../../../assets/ExerciseGifs/LegRaises.gif"),
+      text: "Leg Raises",
+      duration: "x 15",
+      style: {
+        width: 138,
+        height: 124,
+      },
+    },
+    {
+      source: require("../../../assets/ExerciseGifs/PlankTipToe.gif"),
+      text: "Plank",
       duration: "Time: 30s",
       style: {
         width: 138,
@@ -143,7 +163,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    textAlign: "center",
+    textAlign: "left",
     fontSize: 18,
   },
 
