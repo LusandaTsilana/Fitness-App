@@ -1,23 +1,31 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, ScrollView, View } from "react-native";
 import React from "react";
 
 //components
-import AppHeader from "../../components/AppHeader";
-import BackButton from "../../components/BackButton";
+import ExercisesHeader from "../../components/ExercisesHeader";
+import Button from "../../components/Buttons";
+import TextComponent from "../../components/TextComponent";
 
 const ButtockLegs = () => {
   return (
-    <View>
-      <AppHeader
-        content="Buttock & Legs"
-        showName={false}
-        showLogout={false}
-        style={{
-          fontSize: 20,
-        }}
-      />
-      <BackButton />
-    </View>
+    <ScrollView style={{ marginBottom: 50, backgroundColor: "white" }}>
+      <View>
+        <ExercisesHeader content="Legs" />
+      </View>
+      <View style={{ backgroundColor: "white" }}>
+        <View style={{ alignItems: "center", justifyContent: "center" }}>
+          <Button text="Start" />
+        </View>
+        <TextComponent
+          content="Exercises"
+          style={{ textAlign: "left", fontSize: 20, marginLeft: 15 }}
+        />
+
+        <View style={styles.exercises}>
+          <View></View>
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 

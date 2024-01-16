@@ -56,7 +56,7 @@ const BodyPartsGrid = () => {
               style={{ width: 150, height: 133, borderRadius: 10 }}
               source={Buttock}
             />
-            <Text style={styles.title}>Buttock & Legs</Text>
+            <Text style={styles.title}>Legs</Text>
           </Pressable>
         </View>
         <View style={styles.rightbox}>
