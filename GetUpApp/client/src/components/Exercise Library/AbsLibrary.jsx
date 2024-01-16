@@ -140,7 +140,7 @@ const AbsLibrary = () => {
       duration: "x 15",
       style: {
         width: 138,
-        height: 124,
+        height: 126,
       },
     },
     {
