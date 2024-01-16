@@ -1,4 +1,11 @@
-import { StyleSheet, View, Image, Text, Pressable } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  Pressable,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -15,7 +22,7 @@ const BodyPartsGrid = () => {
     <View style={styles.main}>
       <View style={styles.row}>
         <View style={styles.leftbox}>
-          <Pressable
+          <TouchableOpacity
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "ArmShoulders",
@@ -24,10 +31,10 @@ const BodyPartsGrid = () => {
           >
             <Image style={{ width: 150, height: 132 }} source={ArmsShoulders} />
             <Text style={styles.title}>Arms</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
         <View style={styles.rightbox}>
-          <Pressable
+          <TouchableOpacity
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "Abs",
@@ -39,13 +46,13 @@ const BodyPartsGrid = () => {
               source={Abs}
             />
             <Text style={styles.title}>Abs</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
 
       <View style={styles.row}>
         <View style={styles.leftbox}>
-          <Pressable
+          <TouchableOpacity
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "ButtockLegs",
@@ -57,10 +64,10 @@ const BodyPartsGrid = () => {
               source={Buttock}
             />
             <Text style={styles.title}>Legs</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
         <View style={styles.rightbox}>
-          <Pressable
+          <TouchableOpacity
             onPress={() =>
               navigation.navigate("MuscleGroupNavigator", {
                 screen: "FullBody",
@@ -72,7 +79,7 @@ const BodyPartsGrid = () => {
               source={FullBody}
             />
             <Text style={styles.title}>Full Body</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
