@@ -13,15 +13,15 @@ import {
 } from "react-native";
 
 const renderItem = ({ item }) => {
-  const [modalVisible, setModalVisible] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(false);
 
-  const handlePress = () => {
-    setModalVisible(true);
-  };
+  // const handlePress = () => {
+  //   setModalVisible(true);
+  // };
 
-  const closeModal = () => {
-    setModalVisible(false);
-  };
+  // const closeModal = () => {
+  //   setModalVisible(false);
+  // };
 
   return (
     <View
@@ -44,7 +44,7 @@ const renderItem = ({ item }) => {
             { backgroundColor: item.style.backgroundColor },
           ]}
         >
-          <Pressable onPress={handlePress}>
+          <Pressable>
             <Image
               source={item.source}
               style={[styles.image, item.style]}
@@ -55,7 +55,7 @@ const renderItem = ({ item }) => {
       </View>
 
       {/* Modal to display exercise details/instructions and video */}
-      <Modal
+      {/* <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
@@ -84,7 +84,7 @@ const renderItem = ({ item }) => {
             </TouchableOpacity>
           </View>
         </View>
-      </Modal>
+      </Modal> */}
     </View>
   );
 };

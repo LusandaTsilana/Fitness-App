@@ -5,7 +5,7 @@ import React from "react";
 import ExercisesHeader from "../../components/ExercisesHeader";
 import TextComponent from "../../components/TextComponent";
 import Button from "../../components/Buttons";
-import ArmsLibrary from "../../components/Exercise Library/AbsLibrary";
+import AbsLibrary from "../../components/Exercise Library/AbsLibrary";
 
 const Abs = () => {
   return (
@@ -24,7 +24,7 @@ const Abs = () => {
 
         <View style={styles.exercises}>
           <View>
-            <ArmsLibrary />
+            <AbsLibrary />
           </View>
         </View>
       </View>
