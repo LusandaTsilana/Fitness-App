@@ -6,6 +6,8 @@ import AppHeader from "../components/AppHeader";
 import TextComponent from "../components/TextComponent";
 import BodyPartsGrid from "../components/BodyPartsGrid";
 
+import BodyParts from "../components/BodyParts";
+
 const Workout = () => {
   return (
     <View
@@ -15,17 +17,17 @@ const Workout = () => {
     >
       <AppHeader content="Workout" showName={false} showLogout={false} />
 
-      <ScrollView>
+      <View>
         <TextComponent
           content="Programs"
           style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
         />
-        <BodyPartsGrid />
+        <BodyParts />
         <TextComponent
           content="My Workouts"
           style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
         />
-      </ScrollView>
+      </View>
     </View>
   );
 };

@@ -21,9 +21,8 @@ const Abs = () => {
           style={{ textAlign: "left", fontSize: 20, marginLeft: 15 }}
         />
 
-        <View style={styles.exercises}>
-          <View></View>
-        </View>
+        {/* body part section with exercises library display */}
+        <View style={styles.exercises}></View>
       </View>
     </ScrollView>
   );

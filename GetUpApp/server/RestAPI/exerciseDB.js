@@ -21,3 +21,9 @@ const apiCall = async (url, params) => {
     console.log("error: ", error.message);
   }
 };
+
+export const fetchExerciseByBodypart = async (bodyPart) => {
+  let data = await apiCall(baseUrl + `/exercises/bodyPart/${bodyPart}`);
+
+  return data;
+};

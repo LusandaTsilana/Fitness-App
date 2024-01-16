@@ -1,9 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-
 export const bodyParts = [
   {
-    source: require("../../assets/fitnessmodels/amrsshoulders.png"),
+    image: require("../../assets/fitnessmodels/amrsshoulders.png"),
     name: "Arms",
     style: {
       width: 150,
@@ -12,7 +9,7 @@ export const bodyParts = [
   },
 
   {
-    source: require("../../assets/fitnessmodels/abss.png"),
+    image: require("../../assets/fitnessmodels/abss.png"),
     name: "Abs",
     style: {
       width: 150,
@@ -22,7 +19,7 @@ export const bodyParts = [
   },
 
   {
-    source: require("../../assets/fitnessmodels/buttock.png"),
+    image: require("../../assets/fitnessmodels/buttock.png"),
     name: "Legs",
     style: {
       width: 150,
@@ -32,14 +29,11 @@ export const bodyParts = [
   },
 
   {
-    source: require("../../assets/fitnessmodels/fullbody.png"),
+    image: require("../../assets/fitnessmodels/fullbody.png"),
     name: "Cardio",
     style: {
       width: 76,
       height: 132,
-      marginLeft: 40,
     },
   },
 ];
-
-const styles = StyleSheet.create({});
