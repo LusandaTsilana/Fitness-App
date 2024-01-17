@@ -20,7 +20,12 @@ const Workout = () => {
       <View>
         <TextComponent
           content="Programs"
-          style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
+          style={{
+            textAlign: "left",
+            marginLeft: 15,
+            marginTop: 0,
+            marginBottom: 20,
+          }}
         />
         <BodyParts />
         <TextComponent

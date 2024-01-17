@@ -7,10 +7,13 @@ import {
   Image,
 } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { bodyParts } from "../constants/bodyParts";
 
 export default function BodyParts() {
+  const navigation = useNavigation();
+
   return (
     <View style={{ marginHorizontal: 4 }}>
       <FlatList
@@ -22,19 +25,20 @@ export default function BodyParts() {
           paddingBottom: 50,
           paddingTop: 20,
         }}
-        columnWrapperStyle={{ justifyContent: "space-between" }}
+        columnWrapperStyle={{ justifyContent: "space-evenly" }}
         renderItem={({ item, index }) => (
-          <BodyPartsCard index={index} item={item} />
+          <BodyPartsCard navigation={navigation} index={index} item={item} />
         )}
       />
     </View>
   );
 }
 
-const BodyPartsCard = ({ item, index }) => {
+const BodyPartsCard = ({ item, navigation, index }) => {
   return (
     <View>
       <TouchableOpacity
+        onPress={() => navigation.navigate("Exercises", { params: item })}
         style={{
           justifyContent: "flex-end",
           padding: 4,
@@ -52,7 +56,11 @@ const BodyPartsCard = ({ item, index }) => {
           }}
         />
         {/* <LinearGradient colors={["transparent", "#EAD794"]} sty/> */}
-        <Text style={{ width: 180, height: 52 }}></Text>
+        <Text
+          style={{ width: 170, height: 25, textAlign: "center", fontSize: 16 }}
+        >
+          {item.name}
+        </Text>
       </TouchableOpacity>
     </View>
   );

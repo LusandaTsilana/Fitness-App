@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Today from "../screens/Today";
 import Workout from "../screens/Workout";
+import Exercises from "../screens/Exercises";
 import Community from "../screens/Community";
 import Profile from "../screens/Profile";
 import MuscleGroupNavigator from "./MuscleGroupNavigator";
@@ -119,9 +120,14 @@ const WorkoutStack = () => {
         component={Workout}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="MuscleGroupNavigator"
         component={MuscleGroupNavigator}
+        options={{ headerShown: false }}
+      /> */}
+      <Stack.Screen
+        name="Exercises"
+        component={Exercises}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
