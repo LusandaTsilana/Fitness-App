@@ -38,7 +38,7 @@ const BodyPartsCard = ({ item, navigation, index }) => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Exercises", { params: item })}
+        onPress={() => navigation.navigate("Exercises", { item })}
         style={{
           justifyContent: "flex-end",
           padding: 4,
