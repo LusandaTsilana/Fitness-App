@@ -1,10 +1,24 @@
 import axios from "axios";
-
-const rapidapikey = process.env.API_KEY;
+import { rapidapikey } from "../constants/bodyParts";
 
 const baseUrl = "https://exercisedb.p.rapidapi.com";
 
+// //fetch api key from server
+// const getApiKey = async () => {
+//   try {
+//     const response = await axios.get("/api/get-key");
+//     return response.data.apiKey;
+//   } catch (error) {
+//     console.error("Error fetching API key:", error);
+//     return null;
+//   }
+// };
+
 const apiCall = async (url, params) => {
+  if (!rapidapikey) {
+    console.log("Api key not found");
+    return null;
+  }
   try {
     const options = {
       method: "GET",
@@ -18,7 +32,7 @@ const apiCall = async (url, params) => {
     const response = await axios.request(options);
     return response.data;
   } catch (error) {
-    console.log("error: ", error.message);
+    console.log("error:", error);
   }
 };
 
