@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const rapidapikey = process.env.api_key;
-
 const baseUrl = "https://exercisedb.p.rapidapi.com";
 
 const apiCall = async (url, params) => {
