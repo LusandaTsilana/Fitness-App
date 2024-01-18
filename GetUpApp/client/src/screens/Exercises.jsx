@@ -1,12 +1,15 @@
-import { Text, View, StyleSheet } from "react-native";
-import React, { useEffect } from "react";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+import React, { useEffect, useState } from "react";
 import BackButton from "../components/BackButton";
 
 import { useRoute } from "@react-navigation/native";
 
 import { fetchExerciseByBodypart } from "../utils/exerciseDB";
+import ExercisesList from "../components/ExercisesList";
 
 export default function Exercises() {
+  const [exercises, setExercises] = useState([]);
+
   //the below is to fetch/store info from the bodyparts data
   const route = useRoute();
   const { params } = route || {};
@@ -20,39 +23,48 @@ export default function Exercises() {
 
   const getExercises = async (bodypart) => {
     let data = await fetchExerciseByBodypart(bodypart);
-    console.log("Data details: ", data);
+    setExercises(data);
   };
 
   return (
-    <View style={styles.header}>
-      <View style={styles.container}>
-        <View>
-          <BackButton />
-        </View>
-        <View>
-          <Text
-            style={{
-              fontSize: 28,
-              letterSpacing: 2.4,
-              marginRight: 20,
-              textAlign: "center",
-            }}
-          >
-            {item.name}
-          </Text>
+    <View>
+      <View style={styles.header}>
+        <View style={styles.container}>
+          <View>
+            <BackButton />
+          </View>
+          <View>
+            <Text
+              style={{
+                fontSize: 28,
+                letterSpacing: 2.4,
+                marginRight: 20,
+                textAlign: "center",
+              }}
+            >
+              {item.text}
+            </Text>
+          </View>
         </View>
       </View>
+
+      {/* exercises list */}
+      <ScrollView>
+        <View style={{ marginBottom: 10 }}>
+          <ExercisesList data={exercises} />
+        </View>
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   header: {
-    paddingTop: 10,
+    paddingTop: 50,
     flexDirection: "column",
     justifyContent: "space-between",
     backgroundColor: "white",
-    height: 110,
+    height: 150,
   },
 
   container: {

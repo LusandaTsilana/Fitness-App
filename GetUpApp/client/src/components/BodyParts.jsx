@@ -40,7 +40,7 @@ const BodyPartsCard = ({ item, navigation, index }) => {
       <TouchableOpacity
         onPress={() => navigation.navigate("Exercises", { item })}
         style={{
-          justifyContent: "flex-end",
+          justifyContent: "center",
           padding: 4,
           marginBottom: 10,
         }}
@@ -65,7 +65,7 @@ const BodyPartsCard = ({ item, navigation, index }) => {
             marginTop: 2,
           }}
         >
-          {item.name.toUpperCase()}
+          {item.text}
         </Text>
       </TouchableOpacity>
     </View>
