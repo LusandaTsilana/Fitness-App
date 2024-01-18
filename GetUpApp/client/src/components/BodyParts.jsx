@@ -42,14 +42,14 @@ const BodyPartsCard = ({ item, navigation, index }) => {
         style={{
           justifyContent: "flex-end",
           padding: 4,
-          marginBottom: 4,
+          marginBottom: 10,
         }}
       >
         <Image
           source={item.image}
           resizeMode="cover"
           style={{
-            width: 150,
+            width: 170,
             height: 140,
             backgroundColor: "#EAD794",
             borderRadius: 10,
@@ -57,9 +57,15 @@ const BodyPartsCard = ({ item, navigation, index }) => {
         />
         {/* <LinearGradient colors={["transparent", "#EAD794"]} sty/> */}
         <Text
-          style={{ width: 170, height: 25, textAlign: "center", fontSize: 16 }}
+          style={{
+            width: 170,
+            height: 25,
+            textAlign: "center",
+            fontSize: 15,
+            marginTop: 2,
+          }}
         >
-          {item.name}
+          {item.name.toUpperCase()}
         </Text>
       </TouchableOpacity>
     </View>
