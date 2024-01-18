@@ -1,7 +1,8 @@
 import axios from "axios";
-import { rapidapikey } from "../constants/bodyParts";
+// import { rapidapikey } from "../constants/bodyParts";
 
 const baseUrl = "https://exercisedb.p.rapidapi.com";
+const rapidapikey = "3ee22a18c6msh43e26ee581f61fbp1ea958jsn1eeda69003fc";
 
 // //fetch api key from server
 // const getApiKey = async () => {

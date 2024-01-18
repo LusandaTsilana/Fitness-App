@@ -3,21 +3,21 @@ export const rapidapikey = "3ee22a18c6msh43e26ee581f61fbp1ea958jsn1eeda69003fc";
 export const bodyParts = [
   {
     image: require("../../assets/fitnessmodels/amrsshoulders.png"),
-    name: "Arms",
+    name: "upper arms",
   },
 
   {
     image: require("../../assets/fitnessmodels/abss.png"),
-    name: "Abs",
+    name: "waist",
   },
 
   {
     image: require("../../assets/fitnessmodels/buttock.png"),
-    name: "Legs",
+    name: "upper legs",
   },
 
   {
     image: require("../../assets/fitnessmodels/fullbody.png"),
-    name: "Cardio",
+    name: "lower legs",
   },
 ];
