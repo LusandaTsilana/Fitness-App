@@ -48,7 +48,7 @@ export default function Exercises() {
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: 40,
+    paddingTop: 10,
     flexDirection: "column",
     justifyContent: "space-between",
     backgroundColor: "white",
