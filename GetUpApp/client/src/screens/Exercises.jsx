@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import BackButton from "../components/BackButton";
+import { demoExercises } from "../constants/bodyParts";
 
 import { useRoute } from "@react-navigation/native";
 
@@ -8,7 +9,7 @@ import { fetchExerciseByBodypart } from "../utils/exerciseDB";
 import ExercisesList from "../components/ExercisesList";
 
 export default function Exercises() {
-  const [exercises, setExercises] = useState([]);
+  const [exercises, setExercises] = useState(demoExercises);
 
   //the below is to fetch/store info from the bodyparts data
   const route = useRoute();
@@ -18,12 +19,13 @@ export default function Exercises() {
   console.log("Item Details: ", item);
 
   useEffect(() => {
-    if (item) getExercises(item.name);
+    // if (item) getExercises(item.name);
   }, [item]);
 
   const getExercises = async (bodypart) => {
     let data = await fetchExerciseByBodypart(bodypart);
     setExercises(data);
+    // console.log("ExercisesDetails: ", data);
   };
 
   return (
