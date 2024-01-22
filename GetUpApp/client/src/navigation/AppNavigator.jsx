@@ -135,7 +135,7 @@ const WorkoutStack = () => {
       <Stack.Screen
         name="ExercisesDetails"
         component={ExercisesDetails}
-        options={{ headerShown: false, presentation: "fullScreenModal" }}
+        options={{ headerShown: false, presentation: "modal" }}
       />
     </Stack.Navigator>
   );

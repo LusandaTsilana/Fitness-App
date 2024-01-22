@@ -11,7 +11,7 @@ import { fetchExerciseByBodypart } from "../utils/exerciseDB";
 import ExercisesList from "../components/ExercisesList";
 
 export default function Exercises() {
-  const [exercises, setExercises] = useState(demoExercises);
+  const [exercises, setExercises] = useState([]);
 
   //the below is to fetch/store info from the bodyparts data
   const route = useRoute();
@@ -21,7 +21,7 @@ export default function Exercises() {
   console.log("Item Details: ", item);
 
   useEffect(() => {
-    // if (item) getExercises(item.name);
+    if (item) getExercises(item.name);
   }, [item]);
 
   const getExercises = async (bodypart) => {

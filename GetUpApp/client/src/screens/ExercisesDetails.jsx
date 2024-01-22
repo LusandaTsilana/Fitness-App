@@ -1,14 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useRoute } from "@react-navigation/native";
 
-const ExercisesDetails = () => {
-  return (
-    <View>
-      <Text>ExercisesDetails</Text>
-    </View>
-  );
-};
+export default function ExercisesDetails() {
+  const route = useRoute();
+  const { params } = route || {};
+  const { item } = params || {};
 
-export default ExercisesDetails;
+  console.log("Exercise Details: ", item);
+}
 
 const styles = StyleSheet.create({});
