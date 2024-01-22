@@ -4,9 +4,11 @@ import { View, Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+//app screens
 import Today from "../screens/Today";
 import Workout from "../screens/Workout";
 import Exercises from "../screens/Exercises";
+import ExercisesDetails from "../screens/ExercisesDetails";
 import Community from "../screens/Community";
 import Profile from "../screens/Profile";
 import MuscleGroupNavigator from "./MuscleGroupNavigator";
@@ -128,6 +130,11 @@ const WorkoutStack = () => {
       <Stack.Screen
         name="Exercises"
         component={Exercises}
+        options={{ headerShown: false, presentation: "fullScreenModal" }}
+      />
+      <Stack.Screen
+        name="ExercisesDetails"
+        component={ExercisesDetails}
         options={{ headerShown: false, presentation: "fullScreenModal" }}
       />
     </Stack.Navigator>
