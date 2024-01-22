@@ -2,7 +2,7 @@ import { Text, View, FlatList } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-export function ExercisesList(data) {
+export function ExercisesList({ data }) {
   const navigation = useNavigation();
 
   return (
@@ -25,7 +25,7 @@ export function ExercisesList(data) {
   );
 }
 
-const ExerciseCard = () => {
+const ExerciseCard = ({ navigation, index, item }) => {
   return (
     <View>
       <Text>Exercise Card</Text>

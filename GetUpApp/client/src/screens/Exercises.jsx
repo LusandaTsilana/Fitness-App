@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import BackButton from "../components/BackButton";
+import { TextComponent } from "../components/TextComponent";
 import { demoExercises } from "../constants/bodyParts";
 
 import { useRoute } from "@react-navigation/native";
