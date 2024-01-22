@@ -19,16 +19,12 @@ export default function ExercisesDetails() {
 
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
-      <Text
-        style={{
-          fontSize: 25,
-          textAlign: "center",
-          fontWeight: "bold",
-          marginTop: 10,
-        }}
-      >
-        {item.name}
-      </Text>
+      <View>
+        <TouchableOpacity>
+          <CloseButton />
+        </TouchableOpacity>
+      </View>
+
       <View style={{ borderRadius: 10 }}>
         <Image
           source={{ uri: item.gifUrl }}
@@ -36,10 +32,6 @@ export default function ExercisesDetails() {
           style={{ width: wp(100), height: wp(100), borderRadius: 10 }}
         />
       </View>
-
-      <TouchableOpacity>
-        <CloseButton />
-      </TouchableOpacity>
     </View>
   );
 }
