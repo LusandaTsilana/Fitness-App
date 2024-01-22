@@ -2,8 +2,6 @@ import { Text, View, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-virtualized-view";
 import BackButton from "../components/BackButton";
-import { TextComponent } from "../components/TextComponent";
-import { demoExercises } from "../constants/bodyParts";
 
 import { useRoute } from "@react-navigation/native";
 
@@ -31,7 +29,7 @@ export default function Exercises() {
   };
 
   return (
-    <View>
+    <View style={{ backgroundColor: "#FBEBD9" }}>
       <View style={styles.header}>
         <View style={styles.container}>
           <View>

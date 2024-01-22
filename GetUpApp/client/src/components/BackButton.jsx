@@ -5,12 +5,12 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import { useNavigation } from "@react-navigation/native";
 
-const BackButton = () => {
+const BackButton = ({ style }) => {
   const navigation = useNavigation();
 
   return (
     <Pressable onPress={() => navigation.goBack()} style={styles.container}>
-      <Icon name="angle-left" size={35} style={styles.icon} />
+      <Icon name="angle-left" size={35} style={[styles.icon, style]} />
     </Pressable>
   );
 };

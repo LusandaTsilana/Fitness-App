@@ -35,13 +35,14 @@ const ExerciseCard = ({ item, navigation, index }) => {
           paddingHorizontal: 10,
           paddingVertical: 10,
           borderRadius: 10,
-          backgroundColor: "#FACB95",
+          backgroundColor: "white",
         }}
         onPress={() => navigation.navigate("ExercisesDetails", { item })}
       >
         <View style={{ borderRadius: 10 }}>
           <Image
             source={{ uri: item.gifUrl }}
+            contentFit="cover"
             style={{ width: 140, height: 130, borderRadius: 10 }}
             onError={(error) => console.error("Image loading error:", error)}
           />
