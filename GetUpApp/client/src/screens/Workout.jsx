@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { ScrollView } from "react-native-virtualized-view";
 
 //components
 import AppHeader from "../components/AppHeader";
@@ -17,7 +18,7 @@ const Workout = () => {
     >
       <AppHeader content="Workout" showName={false} showLogout={false} />
 
-      <View>
+      <ScrollView>
         <TextComponent
           content="Programs"
           style={{
@@ -32,7 +33,7 @@ const Workout = () => {
           content="My Workouts"
           style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
         />
-      </View>
+      </ScrollView>
     </View>
   );
 };

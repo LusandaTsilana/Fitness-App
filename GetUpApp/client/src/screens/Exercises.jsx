@@ -1,5 +1,6 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
+import { ScrollView } from "react-native-virtualized-view";
 import BackButton from "../components/BackButton";
 import { TextComponent } from "../components/TextComponent";
 import { demoExercises } from "../constants/bodyParts";
@@ -52,7 +53,7 @@ export default function Exercises() {
       </View>
 
       {/* exercises list */}
-      <ScrollView>
+      <ScrollView style={{ marginHorizontal: 10 }}>
         <View style={{ marginBottom: 10 }}>
           <ExercisesList data={exercises} />
         </View>

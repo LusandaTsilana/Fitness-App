@@ -1,8 +1,9 @@
-import { Text, View, FlatList } from "react-native";
+import { Text, View, FlatList, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+// import { Image } from "expo-image";
 
-export function ExercisesList({ data }) {
+export default function ExercisesList({ data }) {
   const navigation = useNavigation();
 
   return (
@@ -16,7 +17,7 @@ export function ExercisesList({ data }) {
           paddingBottom: 60,
           paddingTop: 20,
         }}
-        columnWrapperStyle={{ justifyContent: "space-evenly" }}
+        columnWrapperStyle={{ justifyContent: "space-between" }}
         renderItem={({ item, index }) => (
           <ExerciseCard navigation={navigation} index={index} item={item} />
         )}
@@ -25,12 +26,17 @@ export function ExercisesList({ data }) {
   );
 }
 
-const ExerciseCard = ({ navigation, index, item }) => {
+const ExerciseCard = ({ item, navigation, index }) => {
   return (
     <View>
-      <Text>Exercise Card</Text>
+      <TouchableOpacity style={{ paddingVertical: 3, marginBottom: 5 }}>
+        <View style={{ borderRadius: 10 }}>
+          <Image
+            source={{ uri: item.gifUrl }}
+            style={{ width: 80, height: 100 }}
+          />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
-
-export default ExerciseCard;
