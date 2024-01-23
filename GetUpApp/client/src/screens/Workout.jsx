@@ -5,7 +5,6 @@ import { ScrollView } from "react-native-virtualized-view";
 //components
 import AppHeader from "../components/AppHeader";
 import TextComponent from "../components/TextComponent";
-import BodyPartsGrid from "../components/BodyPartsGrid";
 
 import BodyParts from "../components/BodyParts";
 
@@ -14,6 +13,7 @@ const Workout = () => {
     <ScrollView
       style={{
         backgroundColor: "white",
+        marginBottom: 50,
       }}
     >
       <AppHeader content="Workout" showName={false} showLogout={false} />
