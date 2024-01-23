@@ -22,15 +22,16 @@ export default CloseButton;
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 8,
-    position: "absolute",
+    // position: "absolute",
     marginTop: 6,
     right: 0,
     top: 0,
+    backgroundColor: "#FACB95",
+    borderRadius: 60,
   },
   icon: {
     color: "black",
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    backgroundColor: "white",
+    paddingHorizontal: 5,
+    paddingVertical: 5,
   },
 });

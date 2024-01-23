@@ -53,6 +53,8 @@ const ExerciseCard = ({ item, navigation, index }) => {
             fontWeight: "bold",
             marginTop: 5,
             marginBottom: 8,
+            textAlign: "center",
+            textTransform: "capitalize",
           }}
         >
           {item?.name.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
