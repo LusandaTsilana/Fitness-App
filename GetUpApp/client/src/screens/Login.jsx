@@ -30,7 +30,6 @@ const Login = () => {
     >
       <Head />
       <BackButton />
-
       <ScrollView style={styles.box}>
         <TextComponent content="Log In" />
 

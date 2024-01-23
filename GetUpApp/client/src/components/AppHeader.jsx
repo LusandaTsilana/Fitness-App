@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     backgroundColor: "white",
-    height: 136,
   },
   container: {
     flexDirection: "row",

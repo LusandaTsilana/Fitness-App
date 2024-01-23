@@ -12,7 +12,7 @@ const CloseButton = ({ style }) => {
   const navigation = useNavigation();
   return (
     <Pressable onPress={() => navigation.goBack()} style={styles.container}>
-      <Icon name="closecircleo" size={hp(4.5)} style={[styles.icon, style]} />
+      <Icon name="closecircleo" size={hp(3)} style={[styles.icon, style]} />
     </Pressable>
   );
 };
@@ -21,17 +21,12 @@ export default CloseButton;
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 8,
-    // position: "absolute",
-    marginTop: 6,
-    right: 0,
-    top: 0,
     backgroundColor: "#FACB95",
     borderRadius: 60,
   },
   icon: {
     color: "black",
-    paddingHorizontal: 5,
-    paddingVertical: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
 });

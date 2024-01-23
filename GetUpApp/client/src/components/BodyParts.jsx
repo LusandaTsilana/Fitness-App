@@ -43,8 +43,8 @@ const BodyPartsCard = ({ item, navigation, index }) => {
           resizeMode="cover"
           style={{
             width: 170,
-            height: 140,
-            backgroundColor: "#EAD794",
+            height: 160,
+            backgroundColor: "#F9E7D2",
             borderRadius: 10,
           }}
         />

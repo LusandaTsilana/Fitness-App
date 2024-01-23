@@ -29,33 +29,28 @@ export default function ExercisesDetails() {
     >
       <View
         style={{
-          flexDirection: "row",
-          justifyContent: "space-evenly",
           marginBottom: 30,
         }}
       >
-        <View>
-          <Text
-            style={{
-              fontSize: hp(2.55),
-              textAlign: "center",
-              fontWeight: "bold",
-              marginTop: 15,
-              width: "90%",
-              textTransform: "capitalize",
-            }}
-          >
-            {item.name}
-          </Text>
-        </View>
-        <View>
-          <TouchableOpacity>
-            <CloseButton />
-          </TouchableOpacity>
-        </View>
+        <Text
+          style={{
+            fontSize: hp(2.55),
+            textAlign: "center",
+            fontWeight: "bold",
+            marginTop: 15,
+
+            textTransform: "capitalize",
+          }}
+        >
+          {item.name}
+        </Text>
+
+        <TouchableOpacity>
+          <CloseButton style={{ position: "absolute", right: 0 }} />
+        </TouchableOpacity>
       </View>
 
-      <View style={{ borderRadius: 10, marginBottom: 10 }}>
+      <View style={{ borderRadius: 10, marginBottom: 10, marginTop: 10 }}>
         <Image
           source={{ uri: item.gifUrl }}
           contentFit="cover"
@@ -83,7 +78,12 @@ export default function ExercisesDetails() {
           <Text style={{ fontWeight: "bold" }}>{item?.secondaryMuscles}</Text>
         </Text>
         <Text
-          style={{ fontSize: hp(1.9), letterSpacing: 0.5, paddingVertical: 15 }}
+          style={{
+            fontSize: hp(1.9),
+            letterSpacing: 0.5,
+            paddingVertical: 15,
+            fontWeight: "bold",
+          }}
         >
           Instructions
         </Text>

@@ -1,11 +1,17 @@
 import { Text, View, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-virtualized-view";
-import BackButton from "../components/BackButton";
 
 import { useRoute } from "@react-navigation/native";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 import { fetchExerciseByBodypart } from "../utils/exerciseDB";
+
+//components
+import BackButton from "../components/BackButton";
 import ExercisesList from "../components/ExercisesList";
 
 export default function Exercises() {
@@ -29,7 +35,7 @@ export default function Exercises() {
   };
 
   return (
-    <View style={{ backgroundColor: "#FBEBD9" }}>
+    <ScrollView style={{ backgroundColor: "white" }}>
       <View style={styles.header}>
         <View style={styles.container}>
           <View>
@@ -42,6 +48,7 @@ export default function Exercises() {
                 letterSpacing: 2.4,
                 marginRight: 20,
                 textAlign: "center",
+                fontWeight: "bold",
               }}
             >
               {item.text}
@@ -56,7 +63,7 @@ export default function Exercises() {
           <ExercisesList data={exercises} />
         </View>
       </ScrollView>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     flexDirection: "column",
     justifyContent: "space-between",
-    backgroundColor: "white",
+    backgroundColor: "#FACB95",
     height: 150,
   },
 

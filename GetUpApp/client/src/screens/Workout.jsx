@@ -11,7 +11,7 @@ import BodyParts from "../components/BodyParts";
 
 const Workout = () => {
   return (
-    <View
+    <ScrollView
       style={{
         backgroundColor: "white",
       }}
@@ -20,21 +20,27 @@ const Workout = () => {
 
       <ScrollView>
         <TextComponent
-          content="Programs"
+          content="Target Area"
           style={{
             textAlign: "left",
             marginLeft: 15,
-            marginTop: 0,
+            marginTop: 15,
             marginBottom: 20,
+            fontSize: 20,
           }}
         />
         <BodyParts />
         <TextComponent
           content="My Workouts"
-          style={{ textAlign: "left", marginLeft: 15, marginTop: 0 }}
+          style={{
+            textAlign: "left",
+            marginLeft: 15,
+            marginTop: 20,
+            fontSize: 20,
+          }}
         />
       </ScrollView>
-    </View>
+    </ScrollView>
   );
 };
 
