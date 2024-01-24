@@ -62,14 +62,14 @@ export default function ExercisesDetails() {
         <Text
           style={{ fontSize: hp(1.9), letterSpacing: 0.5, marginVertical: 3 }}
         >
-          Equipment:
+          Equipment:{" "}
           <Text style={{ fontWeight: "bold" }}>{item?.equipment}</Text>
         </Text>
 
         <Text
           style={{ fontSize: hp(1.9), letterSpacing: 0.5, marginVertical: 3 }}
         >
-          Secondary Muscles:
+          Secondary Muscles:{" "}
           <Text style={{ fontWeight: "bold" }}>{item?.secondaryMuscles}</Text>
         </Text>
         <Text
