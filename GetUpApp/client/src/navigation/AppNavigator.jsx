@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //app screens
 import Today from "../screens/Today";
+import ExplorePrograms from "../screens/ExplorePrograms";
 import Workout from "../screens/Workout";
 import Exercises from "../screens/Exercises";
 import ExercisesDetails from "../screens/ExercisesDetails";
@@ -39,8 +40,8 @@ const AppNavigator = () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
-        name="Today"
-        component={Today}
+        name="TodayStack"
+        component={TodayStack}
         options={{
           tabBarIcon: ({ focused }) => {
             return (
@@ -136,6 +137,23 @@ const WorkoutStack = () => {
         name="ExercisesDetails"
         component={ExercisesDetails}
         options={{ headerShown: false, presentation: "modal" }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const TodayStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Today"
+        component={Today}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ExplorePrograms"
+        component={ExplorePrograms}
+        options={{ headerShown: false, presentation: "fullScreenModal" }}
       />
     </Stack.Navigator>
   );
