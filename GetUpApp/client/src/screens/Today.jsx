@@ -9,7 +9,7 @@ import ImageRandom from "../components/ImageRandom";
 
 const Today = () => {
   return (
-    <View
+    <ScrollView
       style={{
         backgroundColor: "white",
         paddingHorizontal: 10,
@@ -28,7 +28,7 @@ const Today = () => {
           <ImageSlider />
         </View>
       </ScrollView>
-    </View>
+    </ScrollView>
   );
 };
 
