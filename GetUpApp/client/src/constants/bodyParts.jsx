@@ -35,7 +35,8 @@ export const bodyParts = [
   },
 ];
 
-export const databasePrograms = [
+//Hardcoding for a database that will be used in the Today Page, the Explore section (recommended exercises)
+export const AbsDB = [
   {
     source: require("../../assets/ExerciseGifs/SideStretch.gif"),
     text: "Alternating Side Stretch",
@@ -124,3 +125,5 @@ export const databasePrograms = [
     },
   },
 ];
+
+export const ArmsDB = [];
