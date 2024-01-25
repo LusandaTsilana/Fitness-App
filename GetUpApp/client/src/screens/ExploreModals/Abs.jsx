@@ -1,12 +1,30 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
 import React from "react";
 
 //components
 import ExercisesHeader from "../../components/ExercisesHeader";
 import TextComponent from "../../components/TextComponent";
 import Button from "../../components/Buttons";
+import { AbsDB } from "../../constants/bodyParts";
 
 const Abs = () => {
+  const renderItem = ({ item }) => {
+    return (
+      <View style={styles.card}>
+        <View
+          style={[
+            styles.imagebox,
+            { backgroundColor: item.style.backgroundColor },
+          ]}
+        >
+          <Image source={item.source} style={[styles.image, item.style]} />
+        </View>
+
+        <Text style={styles.text}>{item.text}</Text>
+      </View>
+    );
+  };
+
   return (
     <ScrollView style={{ marginBottom: 100, backgroundColor: "white" }}>
       <View>
@@ -22,7 +40,15 @@ const Abs = () => {
         />
 
         <View style={styles.exercises}>
-          <View></View>
+          <View>
+            <FlatList
+              data={DATA}
+              renderItem={renderItem}
+              keyExtractor={(item, index) => index.toString()}
+              horizontal={true}
+              showsVerticalScrollIndicator={false}
+            />
+          </View>
         </View>
       </View>
     </ScrollView>

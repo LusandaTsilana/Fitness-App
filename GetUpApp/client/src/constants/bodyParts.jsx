@@ -126,4 +126,72 @@ export const AbsDB = [
   },
 ];
 
-export const ArmsDB = [];
+export const ArmsDB = [
+  {
+    source: require("../../assets/ExerciseGifs/NeckRoll.gif"),
+    text: "Neck Stretch",
+    duration: "Time: 10s",
+    style: {
+      width: 148.29,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/ArmSwing.gif"),
+    text: "Arm Stretch",
+    duration: "Time: 20s",
+    style: {
+      width: 138.73,
+      height: 124,
+      marginLeft: 20,
+    },
+  },
+
+  {
+    source: require("../../assets/ExerciseGifs/static-tricep-stretch.gif"),
+    text: "Left Tricep Stretch",
+    duration: "Time: 10s",
+    style: {
+      width: 101,
+      height: 121,
+    },
+  },
+
+  {
+    source: require("../../assets/ExerciseGifs/static-tricep-stretch.gif"),
+    text: "Right Tricep Stretch",
+    duration: "Time: 10s",
+    style: {
+      width: 101,
+      height: 121,
+      transform: [{ scaleX: -1 }],
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/TricepDip.gif"),
+    text: "Tricep Dips",
+    duration: "x 25",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/Push-Up.gif"),
+    text: "Push Ups",
+    duration: "x 20",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/air-box.gif"),
+    text: "Air Punches",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+];
