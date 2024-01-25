@@ -6,13 +6,16 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //app screens
 import Today from "../screens/Today";
-import ExplorePrograms from "../screens/ExplorePrograms";
+import Yoga from "../screens/ExploreModals/Yoga";
+import Boxing from "../screens/ExploreModals/Boxing";
+import Abs from "../screens/ExploreModals/Abs";
+import LegsExplore from "../screens/ExploreModals/LegsExplore";
+
 import Workout from "../screens/Workout";
 import Exercises from "../screens/Exercises";
 import ExercisesDetails from "../screens/ExercisesDetails";
 import Community from "../screens/Community";
 import Profile from "../screens/Profile";
-import MuscleGroupNavigator from "./MuscleGroupNavigator";
 
 //icons
 import Icon from "react-native-vector-icons/Ionicons";
@@ -151,8 +154,23 @@ const TodayStack = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="ExplorePrograms"
-        component={ExplorePrograms}
+        name="Yoga"
+        component={Yoga}
+        options={{ headerShown: false, presentation: "fullScreenModal" }}
+      />
+      <Stack.Screen
+        name="Boxing"
+        component={Boxing}
+        options={{ headerShown: false, presentation: "fullScreenModal" }}
+      />
+      <Stack.Screen
+        name="Abs"
+        component={Abs}
+        options={{ headerShown: false, presentation: "fullScreenModal" }}
+      />
+      <Stack.Screen
+        name="LegsExplore"
+        component={LegsExplore}
         options={{ headerShown: false, presentation: "fullScreenModal" }}
       />
     </Stack.Navigator>
