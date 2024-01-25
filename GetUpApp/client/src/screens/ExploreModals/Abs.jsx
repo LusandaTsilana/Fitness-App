@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  FlatList,
+  Image,
+} from "react-native";
 import React from "react";
 
 //components
@@ -42,10 +49,10 @@ const Abs = () => {
         <View style={styles.exercises}>
           <View>
             <FlatList
-              data={DATA}
+              data={AbsDB}
               renderItem={renderItem}
               keyExtractor={(item, index) => index.toString()}
-              horizontal={true}
+              vertical={true}
               showsVerticalScrollIndicator={false}
             />
           </View>
