@@ -45,8 +45,6 @@ export const AbsDB = [
       width: 138,
       height: 124,
     },
-    modalTitle: "Side Stretch",
-    modalVideo: "../../assets/ExerciseGifs/SideStretch.gif",
   },
   {
     source: require("../../assets/ExerciseGifs/Cobra.gif"),
@@ -170,16 +168,16 @@ export const ArmsDB = [
   {
     source: require("../../assets/ExerciseGifs/TricepDip.gif"),
     text: "Tricep Dips",
-    duration: "x 25",
+    duration: "x 15",
     style: {
       width: 138,
       height: 124,
     },
   },
   {
-    source: require("../../assets/ExerciseGifs/Push-Up.gif"),
-    text: "Push Ups",
-    duration: "x 20",
+    source: require("../../assets/ExerciseGifs/rss-challenge-warmup-seal-jack.gif"),
+    text: "Arm Swing Jumping Jack",
+    duration: "x 30",
     style: {
       width: 138,
       height: 124,
@@ -192,6 +190,57 @@ export const ArmsDB = [
     style: {
       width: 138,
       height: 124,
+    },
+  },
+];
+
+export const YogaDB = [
+  {
+    source: require("../../assets/ExerciseGifs/NeckRoll.gif"),
+    text: "Neck Stretch",
+    duration: "Time: 10s",
+    style: {
+      width: 148.29,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/SideStretch.gif"),
+    text: "Alternating Side Stretch",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/ArmSwing.gif"),
+    text: "Arm Stretch",
+    duration: "Time: 20s",
+    style: {
+      width: 138.73,
+      height: 124,
+      marginLeft: 20,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/Cobra.gif"),
+    text: "Cobra Stretch",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
+      marginLeft: 20,
+    },
+  },
+
+  {
+    source: require("../../assets/ExerciseGifs/400x400_Cat_Cow_Pose.gif"),
+    text: "Cat Pose Stretch",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 121,
     },
   },
 ];

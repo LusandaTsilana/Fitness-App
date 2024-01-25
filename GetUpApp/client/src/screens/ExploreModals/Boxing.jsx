@@ -51,7 +51,7 @@ const Boxing = () => {
   return (
     <ScrollView style={{ marginBottom: 100, backgroundColor: "white" }}>
       <View>
-        <ExercisesHeader content="Abs" />
+        <ExercisesHeader content="Boxing" />
       </View>
       <View style={{ backgroundColor: "white" }}>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
