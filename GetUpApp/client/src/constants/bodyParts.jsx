@@ -176,8 +176,8 @@ export const ArmsDB = [
   },
   {
     source: require("../../assets/ExerciseGifs/air-box.gif"),
-    text: "Air Punches",
-    duration: "Time: 30s",
+    text: "Shadow Boxing",
+    duration: "Time: 1 min",
     style: {
       width: 138,
       height: 124,
@@ -191,6 +191,16 @@ export const ArmsDB = [
     style: {
       width: 138,
       height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/ArmSwing.gif"),
+    text: "Arm Stretch",
+    duration: "Time: 20s",
+    style: {
+      width: 138.73,
+      height: 124,
+      marginLeft: 20,
     },
   },
 ];
