@@ -10,30 +10,18 @@ import React from "react";
 
 import { useNavigation } from "@react-navigation/native";
 
-const renderItem = ({ item }) => {
-  return (
-    <View style={styles.card}>
-      <Pressable>
-        <View
-          style={[
-            styles.imagebox,
-            { backgroundColor: item.style.backgroundColor },
-          ]}
-        >
-          <Image source={item.source} style={[styles.image, item.style]} />
-        </View>
-
-        <Text style={styles.text}>{item.text}</Text>
-      </Pressable>
-    </View>
-  );
-};
-
 const ImageSlider = () => {
+  const navigation = useNavigation();
+  //navigation function to screens
+  const navigateToScreen = (screen) => {
+    navigation.navigate(screen);
+  };
+
   const DATA = [
     {
       source: require("../../assets/fitnessmodels/yoga-girl.png"),
       text: "Yoga",
+      screen: "Yoga",
       style: {
         width: 95,
         height: 111,
@@ -44,6 +32,7 @@ const ImageSlider = () => {
     {
       source: require("../../assets/fitnessmodels/boxing-girl.png"),
       text: "Boxing",
+      screen: "Boxing",
       style: {
         width: 75,
         height: 121,
@@ -53,21 +42,23 @@ const ImageSlider = () => {
       },
     },
 
-    {
-      source: require("../../assets/fitnessmodels/dance-girl.png"),
-      text: "Dance",
-      style: {
-        width: 101,
-        height: 121,
-        backgroundColor: "#F5E8B7",
-        marginTop: 5,
-        marginLeft: 10,
-      },
-    },
+    // {
+    //   source: require("../../assets/fitnessmodels/dance-girl.png"),
+    //   text: "Dance",
+    //   screen: ""
+    //   style: {
+    //     width: 101,
+    //     height: 121,
+    //     backgroundColor: "#F5E8B7",
+    //     marginTop: 5,
+    //     marginLeft: 10,
+    //   },
+    // },
 
     {
       source: require("../../assets/fitnessmodels/abs-girl.png"),
       text: "Abs",
+      screen: "Abs",
       style: {
         width: 105,
         height: 109,
@@ -80,6 +71,7 @@ const ImageSlider = () => {
     {
       source: require("../../assets/fitnessmodels/legs-girl.png"),
       text: "Legs",
+      screen: "LegsExplore",
       style: {
         width: 114,
         height: 104,
@@ -88,6 +80,29 @@ const ImageSlider = () => {
       },
     },
   ];
+
+  const renderItem = ({ item }) => {
+    return (
+      <View style={styles.card}>
+        <Pressable
+          onPress={() => {
+            navigateToScreen(item.screen);
+          }}
+        >
+          <View
+            style={[
+              styles.imagebox,
+              { backgroundColor: item.style.backgroundColor },
+            ]}
+          >
+            <Image source={item.source} style={[styles.image, item.style]} />
+          </View>
+
+          <Text style={styles.text}>{item.text}</Text>
+        </Pressable>
+      </View>
+    );
+  };
   return (
     <FlatList
       data={DATA}
