@@ -17,16 +17,32 @@ import { AbsDB } from "../../constants/bodyParts";
 const Abs = () => {
   const renderItem = ({ item }) => {
     return (
-      <View style={styles.card}>
-        <Text style={styles.text}>{item.text}</Text>
-        <Text style={styles.duration}>{item.duration}</Text>
-        <View
-          style={[
-            styles.imagebox,
-            { backgroundColor: item.style.backgroundColor },
-          ]}
-        >
-          <Image source={item.source} style={[styles.image, item.style]} />
+      <View
+        style={{
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <View style={styles.card}>
+          <View style={{ marginLeft: 10 }}>
+            <View style={{ width: 150 }}>
+              <Text style={styles.text}>{item.text}</Text>
+            </View>
+            <Text style={styles.duration}>{item.duration}</Text>
+          </View>
+          <View
+            style={[
+              styles.imagebox,
+              { backgroundColor: item.style.backgroundColor },
+            ]}
+          >
+            <Image
+              source={item.source}
+              style={[styles.image, item.style]}
+              cache={"force-cache"}
+            />
+          </View>
         </View>
       </View>
     );
