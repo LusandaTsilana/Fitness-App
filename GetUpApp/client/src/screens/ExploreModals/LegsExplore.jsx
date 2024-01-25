@@ -52,7 +52,7 @@ const LegsExplore = () => {
   return (
     <ScrollView style={{ marginBottom: 100, backgroundColor: "white" }}>
       <View>
-        <ExercisesHeader content="Yoga" />
+        <ExercisesHeader content="Leg" />
       </View>
       <View style={{ backgroundColor: "white" }}>
         <View style={{ alignItems: "center", justifyContent: "center" }}>

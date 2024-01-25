@@ -287,6 +287,15 @@ export const LegsExploreDB = [
   {
     source: require("../../assets/ExerciseGifs/jumpsquat.gif"),
     text: "Jump Squat",
+    duration: "x 15",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/backward-lunge.gif"),
+    text: "Alternating Backward Lunge",
     duration: "x 30",
     style: {
       width: 138,
@@ -296,7 +305,7 @@ export const LegsExploreDB = [
 
   {
     source: require("../../assets/ExerciseGifs/SingleLegCalfRaise.gif"),
-    text: "Right Leg Calf Raise (Left)",
+    text: "Right Leg Calf Raise",
     duration: "x 20",
     style: {
       width: 138,
@@ -305,7 +314,7 @@ export const LegsExploreDB = [
   },
   {
     source: require("../../assets/ExerciseGifs/SingleLegCalfRaise.gif"),
-    text: "Left Leg Calf Raise (Left)",
+    text: "Left Leg Calf Raise",
     duration: "x 20",
     style: {
       width: 138,
