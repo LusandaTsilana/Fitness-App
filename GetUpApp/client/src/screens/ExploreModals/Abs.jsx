@@ -57,4 +57,31 @@ const Abs = () => {
 
 export default Abs;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  card: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "90%",
+    height: 128,
+    backgroundColor: "#F9E7D2",
+    marginVertical: 10,
+    borderRadius: 10,
+  },
+
+  image: {
+    borderRadius: 10,
+    marginRight: 10,
+  },
+
+  text: {
+    textAlign: "left",
+    fontSize: 18,
+  },
+
+  duration: {
+    fontSize: 13,
+    marginTop: 10,
+    color: "#226FE3",
+  },
+});
