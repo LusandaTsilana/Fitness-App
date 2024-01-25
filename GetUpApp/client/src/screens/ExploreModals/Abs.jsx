@@ -18,6 +18,8 @@ const Abs = () => {
   const renderItem = ({ item }) => {
     return (
       <View style={styles.card}>
+        <Text style={styles.text}>{item.text}</Text>
+        <Text style={styles.duration}>{item.duration}</Text>
         <View
           style={[
             styles.imagebox,
@@ -26,8 +28,6 @@ const Abs = () => {
         >
           <Image source={item.source} style={[styles.image, item.style]} />
         </View>
-
-        <Text style={styles.text}>{item.text}</Text>
       </View>
     );
   };
