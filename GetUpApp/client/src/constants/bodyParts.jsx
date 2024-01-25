@@ -166,15 +166,6 @@ export const ArmsDB = [
     },
   },
   {
-    source: require("../../assets/ExerciseGifs/TricepDip.gif"),
-    text: "Tricep Dips",
-    duration: "x 15",
-    style: {
-      width: 138,
-      height: 124,
-    },
-  },
-  {
     source: require("../../assets/ExerciseGifs/rss-challenge-warmup-seal-jack.gif"),
     text: "Arm Swing Jumping Jack",
     duration: "x 30",
@@ -186,6 +177,16 @@ export const ArmsDB = [
   {
     source: require("../../assets/ExerciseGifs/air-box.gif"),
     text: "Air Punches",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+
+  {
+    source: require("../../assets/ExerciseGifs/fastFeet.gif"),
+    text: "Fast Feet",
     duration: "Time: 30s",
     style: {
       width: 138,
@@ -241,6 +242,84 @@ export const YogaDB = [
     style: {
       width: 138,
       height: 121,
+    },
+  },
+];
+
+export const LegsExploreDB = [
+  {
+    source: require("../../assets/ExerciseGifs/SideStretch.gif"),
+    text: "Alternating Side Stretch",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/HamstringStretch.gif"),
+    text: "Left Leg Hamstring Stretch",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/HamstringStretch.gif"),
+    text: "Right Leg Hamstring Stretch",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
+      transform: [{ scaleX: -1 }],
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/AdductoreStretch.gif"),
+    text: "Alternating Adductor Stretch",
+    duration: "Time: 1 min",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/jumpsquat.gif"),
+    text: "Jump Squat",
+    duration: "x 30",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+
+  {
+    source: require("../../assets/ExerciseGifs/SingleLegCalfRaise.gif"),
+    text: "Right Leg Calf Raise (Left)",
+    duration: "x 20",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/SingleLegCalfRaise.gif"),
+    text: "Left Leg Calf Raise (Left)",
+    duration: "x 20",
+    style: {
+      width: 138,
+      height: 124,
+      transform: [{ scaleX: -1 }],
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/QuadCoolDown.gif"),
+    text: "Quad Stretch",
+    duration: "Time: 30s",
+    style: {
+      width: 138,
+      height: 124,
     },
   },
 ];
