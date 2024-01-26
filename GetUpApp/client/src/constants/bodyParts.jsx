@@ -168,7 +168,7 @@ export const ArmsDB = [
   {
     source: require("../../assets/ExerciseGifs/rss-challenge-warmup-seal-jack.gif"),
     text: "Arm Swing Jumping Jack",
-    duration: "x 30",
+    duration: "x 20",
     style: {
       width: 138,
       height: 124,
@@ -194,6 +194,24 @@ export const ArmsDB = [
     },
   },
   {
+    source: require("../../assets/ExerciseGifs/lita-lewis-jumping-jack.gif"),
+    text: "Jumping Jack",
+    duration: "x 20",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
+    source: require("../../assets/ExerciseGifs/air-box.gif"),
+    text: "Shadow Boxing",
+    duration: "Time: 1 min",
+    style: {
+      width: 138,
+      height: 124,
+    },
+  },
+  {
     source: require("../../assets/ExerciseGifs/ArmSwing.gif"),
     text: "Arm Stretch",
     duration: "Time: 20s",
@@ -207,17 +225,17 @@ export const ArmsDB = [
 
 export const YogaDB = [
   {
-    source: require("../../assets/ExerciseGifs/NeckRoll.gif"),
-    text: "Neck Stretch",
-    duration: "Time: 10s",
+    source: require("../../assets/ExerciseGifs/LotusYoga.gif"),
+    text: "Lotus Pose",
+    duration: "Time: 30s",
     style: {
-      width: 148.29,
-      height: 124,
+      width: 138,
+      height: 121,
     },
   },
   {
-    source: require("../../assets/ExerciseGifs/SideStretch.gif"),
-    text: "Alternating Side Stretch",
+    source: require("../../assets/ExerciseGifs/SitForwardStretch.gif"),
+    text: "Forward Stretch",
     duration: "Time: 30s",
     style: {
       width: 138,
@@ -225,9 +243,19 @@ export const YogaDB = [
     },
   },
   {
-    source: require("../../assets/ExerciseGifs/ArmSwing.gif"),
-    text: "Arm Stretch",
-    duration: "Time: 20s",
+    source: require("../../assets/ExerciseGifs/warrior-pose.gif"),
+    text: "Warrior Pose",
+    duration: "Time: 30s",
+    style: {
+      width: 148.29,
+      height: 124,
+    },
+  },
+
+  {
+    source: require("../../assets/ExerciseGifs/DownwardDog.gif"),
+    text: "Downward Dog",
+    duration: "Time: 30s",
     style: {
       width: 138.73,
       height: 124,
@@ -235,8 +263,8 @@ export const YogaDB = [
     },
   },
   {
-    source: require("../../assets/ExerciseGifs/Cobra.gif"),
-    text: "Cobra Stretch",
+    source: require("../../assets/ExerciseGifs/Quad-StretchYoga.gif"),
+    text: "Quad Stretch",
     duration: "Time: 30s",
     style: {
       width: 138,
@@ -244,14 +272,14 @@ export const YogaDB = [
       marginLeft: 20,
     },
   },
-
   {
-    source: require("../../assets/ExerciseGifs/400x400_Cat_Cow_Pose.gif"),
-    text: "Cat Pose Stretch",
+    source: require("../../assets/ExerciseGifs/PS_butt_bridge.gif"),
+    text: "Glute Bridge",
     duration: "Time: 30s",
     style: {
       width: 138,
-      height: 121,
+      height: 124,
+      marginLeft: 20,
     },
   },
 ];

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native-virtualized-view";
 
@@ -40,15 +40,16 @@ const Workout = () => {
           }}
         />
         <BodyParts />
-        {/* <TextComponent
-          content="My Workouts"
+        <TextComponent
+          content="Exercise Library"
           style={{
             textAlign: "left",
             marginLeft: 15,
-            marginTop: 20,
+            marginTop: 15,
+            marginBottom: 20,
             fontSize: 20,
           }}
-        /> */}
+        />
       </ScrollView>
     </ScrollView>
   );
