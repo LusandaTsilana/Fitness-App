@@ -1,4 +1,4 @@
-import { Text, View, FlatList, TouchableOpacity } from "react-native";
+import { Text, View, FlatList, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Image } from "expo-image";
@@ -29,7 +29,7 @@ export default function ExercisesList({ data }) {
 const ExerciseCard = ({ item, navigation, index }) => {
   return (
     <View>
-      <TouchableOpacity
+      <Pressable
         style={{
           marginBottom: 15,
           paddingHorizontal: 10,
@@ -59,7 +59,7 @@ const ExerciseCard = ({ item, navigation, index }) => {
         >
           {item?.name.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
         </Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };

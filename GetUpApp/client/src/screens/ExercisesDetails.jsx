@@ -1,4 +1,4 @@
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, Pressable, View } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
 
@@ -45,9 +45,9 @@ export default function ExercisesDetails() {
           {item.name}
         </Text>
 
-        <TouchableOpacity>
+        <Pressable>
           <CloseButton style={{ position: "absolute", right: 0 }} />
-        </TouchableOpacity>
+        </Pressable>
       </View>
 
       <View style={{ borderRadius: 10, marginBottom: 10, marginTop: 10 }}>

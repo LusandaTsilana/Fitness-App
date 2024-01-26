@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableOpacity, View, Image } from "react-native";
+import { FlatList, Text, Pressable, View, Image } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -30,7 +30,7 @@ export default function BodyParts() {
 const BodyPartsCard = ({ item, navigation, index }) => {
   return (
     <View>
-      <TouchableOpacity
+      <Pressable
         onPress={() => navigation.navigate("Exercises", { item })}
         style={{
           justifyContent: "center",
@@ -60,7 +60,7 @@ const BodyPartsCard = ({ item, navigation, index }) => {
         >
           {item.text}
         </Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };
