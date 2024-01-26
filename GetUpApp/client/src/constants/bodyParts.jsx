@@ -5,7 +5,7 @@ export const bodyParts = [
     text: "Arms",
   },
   {
-    image: require("../../assets/fitnessmodels/fullbody.png"),
+    image: require("../../assets/fitnessmodels/chest.png"),
     name: "chest",
     text: "Chest",
   },
@@ -29,7 +29,7 @@ export const bodyParts = [
   },
 
   {
-    image: require("../../assets/fitnessmodels/fullbody.png"),
+    image: require("../../assets/fitnessmodels/dance.png"),
     name: "cardio",
     text: "Cardio",
   },

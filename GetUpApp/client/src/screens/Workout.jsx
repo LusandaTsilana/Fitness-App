@@ -20,6 +20,16 @@ const Workout = () => {
 
       <ScrollView>
         <TextComponent
+          content="Exercise Library"
+          style={{
+            textAlign: "left",
+            marginLeft: 15,
+            marginTop: 15,
+            marginBottom: 20,
+            fontSize: 20,
+          }}
+        />
+        <TextComponent
           content="Target Area"
           style={{
             textAlign: "left",
@@ -30,7 +40,7 @@ const Workout = () => {
           }}
         />
         <BodyParts />
-        <TextComponent
+        {/* <TextComponent
           content="My Workouts"
           style={{
             textAlign: "left",
@@ -38,7 +48,7 @@ const Workout = () => {
             marginTop: 20,
             fontSize: 20,
           }}
-        />
+        /> */}
       </ScrollView>
     </ScrollView>
   );
