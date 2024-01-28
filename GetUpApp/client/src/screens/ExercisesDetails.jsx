@@ -22,9 +22,10 @@ export default function ExercisesDetails() {
       showVerticalScrollIndicator={false}
       contentContainerStyle={{
         backgroundColor: "white",
-        paddingBottom: 60,
+        paddingBottom: 150,
         paddingLeft: 10,
         paddingRight: 10,
+        
       }}
     >
       <View

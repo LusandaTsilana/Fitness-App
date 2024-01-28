@@ -11,14 +11,14 @@ import BodyParts from "../components/BodyParts";
 const Workout = () => {
   return (
     <ScrollView
-      style={{
+      contentContainerStyle={{
         backgroundColor: "white",
-        marginBottom: 50,
+        paddingBottom: 150,
       }}
     >
       <AppHeader content="Workout" showName={false} showLogout={false} />
 
-      <ScrollView>
+      <ScrollView contentContainerStyle={{flex:1}}>
         <TextComponent
           content="Exercise Library"
           style={{
@@ -41,7 +41,7 @@ const Workout = () => {
         />
         <BodyParts />
         <TextComponent
-          content="Exercise Library"
+          content="My Workouts"
           style={{
             textAlign: "left",
             marginLeft: 15,

@@ -10,9 +10,12 @@ import ImageRandom from "../components/ImageRandom";
 const Today = () => {
   return (
     <ScrollView
-      style={{
+      contentContainerStyle={{
         backgroundColor: "white",
         paddingHorizontal: 10,
+        flex: 1,
+        paddingBottom: 100
+        
       }}
     >
       <AppHeader content="Good day," showName={true} showLogout={false} />
@@ -34,4 +37,8 @@ const Today = () => {
 
 export default Today;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});

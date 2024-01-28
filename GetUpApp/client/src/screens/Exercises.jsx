@@ -35,7 +35,7 @@ export default function Exercises() {
   };
 
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
+    <ScrollView style={{ backgroundColor: "white", paddingBottom: 100 }}>
       <View style={styles.header}>
         <View style={styles.container}>
           <View>
