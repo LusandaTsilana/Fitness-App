@@ -18,7 +18,7 @@ const Community = () => {
   console.log("UserChats", userChats);
 
   return (
-    <View>
+    <View style={{backgroundColor: "white"}}>
       <AppHeader content="Chat" showName={false} showLogout={false} />
 
       <View style={styles.container}>
@@ -28,7 +28,7 @@ const Community = () => {
               style={{
                 flexDirection: "row",
                 justifyContent: "space-between",
-                width: "40%",
+                width: "100%",
               }}
             >
               <Text style={styles.box}>
