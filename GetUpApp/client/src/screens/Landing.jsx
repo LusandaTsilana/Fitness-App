@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -12,7 +12,7 @@ const Landing = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Head />
       <Image style={styles.image} source={RunGirl} />
       <Text style={styles.slogan}>Embrace Your Power</Text>
@@ -22,12 +22,13 @@ const Landing = () => {
         <Button text="Login" onPress={() => navigation.navigate("Login")} />
         <Button text="Signup" onPress={() => navigation.navigate("Signup")} />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center", // Center the content vertically
     backgroundColor: "white",

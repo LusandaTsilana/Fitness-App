@@ -20,17 +20,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "white",
+    
   },
 
   heading: {
-    fontSize: 40,
+    fontSize: 50,
+    fontWeight: "bold",
     marginTop: 25,
-    marginBottom: 20,
+    marginBottom: 80,
     letterSpacing: 2.4,
   },
   logo: {
-    width: 42,
-    height: 48,
+    width: 48,
+    height: 55,
+    marginBottom: 65,
   },
 });
 
