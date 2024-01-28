@@ -15,6 +15,7 @@ import Workout from "../screens/Workout";
 import Exercises from "../screens/Exercises";
 import ExercisesDetails from "../screens/ExercisesDetails";
 import Community from "../screens/Community";
+import ChatBox from "../screens/ChatBox"
 import Profile from "../screens/Profile";
 
 //icons
@@ -79,8 +80,8 @@ const AppNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Community"
-        component={Community}
+        name="CommunityStack"
+        component={CommunityStack}
         options={{
           tabBarIcon: ({ focused }) => {
             return (
@@ -171,6 +172,23 @@ const TodayStack = () => {
       <Stack.Screen
         name="LegsExplore"
         component={LegsExplore}
+        options={{ headerShown: false, presentation: "fullScreenModal" }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const CommunityStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Community"
+        component={Community}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ChatBox"
+        component={ChatBox}
         options={{ headerShown: false, presentation: "fullScreenModal" }}
       />
     </Stack.Navigator>

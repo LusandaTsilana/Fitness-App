@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 //components
 import AppHeader from "../components/AppHeader";
 import UserChat from "../components/Chat/UserChat";
+import ChatBox from "../screens/ChatBox"
 
 //context files
 import { ChatContext } from "../context/ChatContext";
@@ -41,7 +42,7 @@ const Community = () => {
                   );
                 })}
               </Text>
-              <Text style={styles.box}>Chat Box</Text>
+              <Text style={styles.box}><ChatBox/></Text>
             </View>
           </View>
         )}
