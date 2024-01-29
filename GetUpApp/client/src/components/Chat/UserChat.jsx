@@ -2,8 +2,6 @@ import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import React, { useState } from "react";
 import { useFetchRecipientUser } from "../../hooks/useFetchRecipientUser";
 
-import { useNavigation } from "@react-navigation/native";
-
 //profile avatar
 import Avatar from "../../../assets/undraw_Profile_pic_re_iwgo.png";
 
