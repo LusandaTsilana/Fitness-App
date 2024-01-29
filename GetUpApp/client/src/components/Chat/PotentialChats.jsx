@@ -1,18 +1,29 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useContext } from "react";
 import { ChatContext } from "../../context/ChatContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const PotentialChats = () => {
-  const { potentialChats } = useContext(ChatContext);
-  console.log("PotentialChats: ", potentialChats);
+  const { user } = useContext(AuthContext);
+  const { potentialChats, createChat } = useContext(ChatContext);
+
+  console.log("pChats", potentialChats);
 
   return (
     <View>
-      <Text>New Message</Text>
+      {potentialChats &&
+        potentialChats.map((u, index) => {
+          return (
+            <View key={index} onPress={() => createChat(user._id, u.id)}>
+              <Text>{u.firstname}</Text>
+              <Text style={{ color: "green" }}>Online</Text>
+            </View>
+          );
+        })}
     </View>
   );
 };
 
-export default PotentialChats;
-
 const styles = StyleSheet.create({});
+
+export default PotentialChats;
