@@ -9,6 +9,7 @@ import UserChat from "../components/Chat/UserChat";
 //context files
 import { ChatContext } from "../context/ChatContext";
 import { AuthContext } from "../context/AuthContext";
+import PotentialChats from "../components/Chat/PotentialChats";
 
 const Community = () => {
   const navigation = useNavigation();
@@ -25,6 +26,7 @@ const Community = () => {
       <AppHeader content="Chat" showName={false} showLogout={false} />
 
       <View style={styles.container}>
+        <PotentialChats />
         {userChats?.length < 1 ? null : (
           <View style={{ flexDirection: "row" }}>
             <View
