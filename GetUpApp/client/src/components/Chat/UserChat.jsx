@@ -2,33 +2,44 @@ import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import React, { useState } from "react";
 import { useFetchRecipientUser } from "../../hooks/useFetchRecipientUser";
 
+import { useNavigation } from "@react-navigation/native";
+
 //profile avatar
-import Avatar from "../../../assets/undraw_Profile_pic_re_iwgo.png"
+import Avatar from "../../../assets/undraw_Profile_pic_re_iwgo.png";
 
-
-const UserChat = ({chat, user}) => {
+const UserChat = ({ chat, user }) => {
   const { recipientUser } = useFetchRecipientUser(chat, user);
 
   return (
-    <Pressable style={{paddingHorizontal: 10}}>
+    <View style={{ paddingHorizontal: 10 }}>
       <View style={styles.container}>
         <View style={styles.box}>
           <View style={styles.area}>
-            <Image source={Avatar} style={{ width: 50, height: 50}}/>
+            <Image source={Avatar} style={{ width: 50, height: 50 }} />
           </View>
           <View style={styles.textContent}>
-            <View style={styles.name}><Text>{recipientUser?.firstname}</Text></View>
-          <View style={styles.textMessage}><Text>Text Message</Text></View>
+            <View style={styles.name}>
+              <Text>{recipientUser?.firstname}</Text>
+            </View>
+            <View style={styles.textMessage}>
+              <Text>Text Message</Text>
+            </View>
           </View>
         </View>
 
         <View style={styles.view}>
-          <View style={styles.date}><Text>29/01/2024</Text></View>
-          <View style={styles.userNotifications}><Text>2</Text></View>
-          <View style={styles.userOnline}><Text>Online</Text></View>
+          <View style={styles.date}>
+            <Text>29/01/2024</Text>
+          </View>
+          <View style={styles.userNotifications}>
+            <Text>2</Text>
+          </View>
+          <View style={styles.userOnline}>
+            <Text>Online</Text>
+          </View>
         </View>
       </View>
-    </Pressable>
+    </View>
   );
 };
 
@@ -38,39 +49,38 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 5,
-    borderBottomWidth: 1, 
-    borderBottomColor: "black", 
+    borderBottomWidth: 1,
+    borderBottomColor: "black",
   },
 
   area: {
     marginRight: 10,
-   
   },
 
   box: {
-    flexDirection: "row"
+    flexDirection: "row",
+    width: "100%",
   },
 
-  name:{
-    paddingBottom: 10
+  name: {
+    paddingBottom: 10,
   },
 
   view: {
     flexDirection: "column",
-    alignItems: "flex-end"
-
+    alignItems: "flex-end",
   },
-  userNotifications:{
+  userNotifications: {
     paddingVertical: 3,
     paddingHorizontal: 6,
     borderRadius: 10,
-    backgroundColor: "#FACB95"
+    backgroundColor: "#FACB95",
   },
 
   userOnline: {
     color: "green",
-    marginTop: 10
-  }
+    marginTop: 10,
+  },
 });
 
 export default UserChat;

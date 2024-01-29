@@ -25,7 +25,6 @@ export default function ExercisesDetails() {
         paddingBottom: 150,
         paddingLeft: 10,
         paddingRight: 10,
-        
       }}
     >
       <View

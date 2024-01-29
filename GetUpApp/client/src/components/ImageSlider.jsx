@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const ImageSlider = () => {
   const navigation = useNavigation();
-  //navigation function to screens
+  //navigation to specified screen upon click
   const navigateToScreen = (screen) => {
     navigation.navigate(screen);
   };
@@ -41,19 +41,6 @@ const ImageSlider = () => {
         marginLeft: 20,
       },
     },
-
-    // {
-    //   source: require("../../assets/fitnessmodels/dance-girl.png"),
-    //   text: "Dance",
-    //   screen: ""
-    //   style: {
-    //     width: 101,
-    //     height: 121,
-    //     backgroundColor: "#F5E8B7",
-    //     marginTop: 5,
-    //     marginLeft: 10,
-    //   },
-    // },
 
     {
       source: require("../../assets/fitnessmodels/abs-girl.png"),

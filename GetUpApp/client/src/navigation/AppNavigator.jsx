@@ -15,7 +15,7 @@ import Workout from "../screens/Workout";
 import Exercises from "../screens/Exercises";
 import ExercisesDetails from "../screens/ExercisesDetails";
 import Community from "../screens/Community";
-import ChatBox from "../screens/ChatBox"
+import ChatBox from "../screens/ChatBox";
 import Profile from "../screens/Profile";
 
 //icons
@@ -189,7 +189,7 @@ const CommunityStack = () => {
       <Stack.Screen
         name="ChatBox"
         component={ChatBox}
-        options={{ headerShown: false, presentation: "fullScreenModal" }}
+        options={{ headerShown: false, presentation: "modal" }}
       />
     </Stack.Navigator>
   );
