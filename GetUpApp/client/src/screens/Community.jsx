@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, ScrollView } from "react-native";
 import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -22,13 +22,13 @@ const Community = () => {
   console.log("UserChats", userChats);
 
   return (
-    <View style={{ backgroundColor: "white" }}>
+    <ScrollView style={{ backgroundColor: "white" }}>
       <AppHeader content="Community" showName={false} showLogout={false} />
 
       <View style={styles.container}>
-        <Pressable onPress={() => navigation.navigate("ChatBox")}>
-          <PotentialChats />
-        </Pressable>
+        {/* <Pressable onPress={() => navigation.navigate("ChatBox")}> */}
+        <PotentialChats />
+        {/* </Pressable> */}
 
         {userChats?.length < 1 ? null : (
           <View style={{ flexDirection: "row" }}>
@@ -54,7 +54,7 @@ const Community = () => {
           </View>
         )}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

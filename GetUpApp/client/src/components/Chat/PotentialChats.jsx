@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useContext } from "react";
 import { ChatContext } from "../../context/ChatContext";
 import { AuthContext } from "../../context/AuthContext";
@@ -18,9 +18,11 @@ const PotentialChats = () => {
         {potentialChats &&
           potentialChats.map((u, index) => {
             return (
-              <View key={index} onPress={() => createChat(user._id, u.id)}>
-                <Text>{u.firstname}</Text>
-                <Text style={{ color: "green" }}>Online</Text>
+              <View key={index}>
+                <Pressable onPress={() => createChat(user._id, u._id)}>
+                  <Text>{u.firstname}</Text>
+                  <Text style={{ color: "green" }}>Online</Text>
+                </Pressable>
               </View>
             );
           })}

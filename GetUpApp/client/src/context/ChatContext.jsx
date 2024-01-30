@@ -9,7 +9,7 @@ export const ChatContextProvider = ({ children, user }) => {
   const [userChatsError, setUserChatsError] = useState(null);
   const [potentialChats, setPotentialChats] = useState([]);
 
-  //for potential chats
+  //to get all users initially
   useEffect(() => {
     const getUsers = async () => {
       const response = await getRequest(`${baseUrl}/users`);
@@ -20,6 +20,7 @@ export const ChatContextProvider = ({ children, user }) => {
       const pChats = response.filter((u) => {
         let isChatCreated = false;
 
+        //to ensure that logged in user is excluded from potential chats by returning false
         if (user?._id === u._id) return false;
 
         if (userChats) {
