@@ -9,7 +9,7 @@ const UserChat = ({ chat, user }) => {
   const { recipientUser } = useFetchRecipientUser(chat, user);
 
   return (
-    <View style={{ paddingHorizontal: 10 }}>
+    <View style={{ paddingHorizontal: 40 }}>
       <View style={styles.container}>
         <View style={styles.box}>
           <View style={styles.area}>

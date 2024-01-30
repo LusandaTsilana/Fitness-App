@@ -91,7 +91,7 @@ const AppNavigator = () => {
                   size={30}
                   color={focused ? "#9F4E04" : "black"}
                 />
-                <Text style={{ fontSize: 12, color: "black" }}>Chat</Text>
+                <Text style={{ fontSize: 12, color: "black" }}>Community</Text>
               </View>
             );
           },

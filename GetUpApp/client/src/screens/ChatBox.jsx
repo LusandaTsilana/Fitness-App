@@ -14,6 +14,7 @@ const ChatBox = ({ chat, user }) => {
       <View style={styles.chatboxHeader}>
         <View>
           <BackButton />
+          <Text>ChatBox</Text>
         </View>
 
         <View style={styles.name}>

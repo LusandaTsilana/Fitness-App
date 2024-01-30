@@ -23,10 +23,13 @@ const Community = () => {
 
   return (
     <View style={{ backgroundColor: "white" }}>
-      <AppHeader content="Chat" showName={false} showLogout={false} />
+      <AppHeader content="Community" showName={false} showLogout={false} />
 
       <View style={styles.container}>
-        <PotentialChats />
+        <Pressable onPress={() => navigation.navigate("ChatBox")}>
+          <PotentialChats />
+        </Pressable>
+
         {userChats?.length < 1 ? null : (
           <View style={{ flexDirection: "row" }}>
             <View
