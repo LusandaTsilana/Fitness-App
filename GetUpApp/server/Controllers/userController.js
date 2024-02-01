@@ -11,7 +11,7 @@ const createToken = (_id) => {
 
 const registerUser = async (req, res) => {
   try {
-    const { firstname, lastname, email, password } = req.body;
+    const { firstname, lastname, email, password, cpassword } = req.body;
 
     let user = await userModel.findOne({ email });
 
@@ -20,7 +20,7 @@ const registerUser = async (req, res) => {
         .status(400)
         .json("User with given email already exists. Go to Login");
     //validations below
-    if (!firstname || !lastname || !email || !password)
+    if (!firstname || !lastname || !email || !password || !cpassword)
       return res.status(400).json("All form fields are required");
 
     if (!validator.isEmail(email))
@@ -33,8 +33,12 @@ const registerUser = async (req, res) => {
           "Only strong passwords required. \n Password must have: \n - at least 1 lowercase letter \n - at least 1 uppercase letter \n - at least 1 number \n - at least 1 special character"
         );
 
+    if (password !== cpassword) {
+      return res.status(400).json("Passwords do not match");
+    }
+
     //creation of user based on these fields
-    user = new userModel({ firstname, lastname, email, password });
+    user = new userModel({ firstname, lastname, email, password, cpassword });
 
     //salt is a random string of characters to help security - less possibility of decoding
     const salt = await bcrypt.genSalt(10);

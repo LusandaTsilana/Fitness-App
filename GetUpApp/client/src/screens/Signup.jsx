@@ -95,6 +95,20 @@ const Signup = () => {
             />
           </View>
 
+          <View>
+            <InputHeading content="Confirm Password" />
+            <TextInput
+              style={styles.input}
+              placeholder="Confirm your password"
+              onChangeText={(text) =>
+                updateRegisterInfo({
+                  ...registerInfo,
+                  cpassword: text,
+                })
+              }
+            />
+          </View>
+
           {registerError?.error && (
             <Text style={styles.emessage}>{registerError?.message}</Text>
           )}
