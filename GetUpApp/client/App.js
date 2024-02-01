@@ -4,7 +4,6 @@ import { NavigationContainer } from "@react-navigation/native";
 //navigator
 import AuthNavigator from "../client/src/navigation/AuthNavigator";
 import AppNavigator from "../client/src/navigation/AppNavigator";
-import MuscleGroupNavigator from "./src/navigation/MuscleGroupNavigator";
 
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
